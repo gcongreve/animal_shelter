@@ -1,11 +1,14 @@
-require('sinatra')
-require('sinatra/contrib/all')
-require('pry-byebug')
-require_relative('../models/animal.rb')
-also_reload('../models/*')
 
 
-get '/animals' do
-  @animals = Animals.all
-  erb(:'animals/index')
+#index
+get '/animals/?' do
+  "Hello World"
+  @animals = Animal.all
+  erb ( :'animals/index' )
+end
+
+#show individual
+get '/animals/:id/?' do
+  @animal = Animal.find(params[:id])
+  erb(:'animals/show')
 end

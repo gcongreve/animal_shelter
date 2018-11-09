@@ -8,15 +8,17 @@
     <th>adoptable?</th>
     <th>Trained?</th>
     <th>Adopted?</th>
+    <th>Link to Animal</th>
   </tr>
   <% @animals.each do |animal| %>
   <tr>
-    <td><%= animal.name %>"></td>
+    <td><%= animal.name %></td>
     <td><%= animal.type %></td>
     <td><%= animal.date_admitted %></td>
     <td><%= animal.adoptable %></td>
     <td><%= animal.trained %></td>
     <td><%= animal.adopted %></td>
+    <td><a href="/animal/<%= animal.id %>">link</a></td>
   </tr>
   <% end %>
 </table>

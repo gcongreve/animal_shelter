@@ -18,7 +18,8 @@ class Animal
   def self.all()
     sql = "SELECT * FROM animals"
     animal_hash = SqlRunner.run(sql)
-    return animal_hash.map { |animal| Animal.new(animal) }
+    animals = animal_hash.map { |animal| Animal.new(animal) }
+    return animals
   end
 
   def self.find_by_id(id)
@@ -55,7 +56,7 @@ class Animal
       $1, $2, $3, $4, $5, $6
     )
     WHERE id = $6"
-    values = [@name, @type, @date_admitted,@adoptable, @trained, @adopted, @id]
+    values = [@name, @type, @date_admitted, @adoptable, @trained, @adopted, @id]
     SqlRunner.run(sql, values)
   end
 
