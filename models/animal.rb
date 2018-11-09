@@ -51,11 +51,11 @@ class Animal
     adoptable,
     trained,
     adopted   )
-    VALUES
+    =
     (
       $1, $2, $3, $4, $5, $6
     )
-    WHERE id = $6"
+    WHERE id = $7"
     values = [@name, @type, @date_admitted, @adoptable, @trained, @adopted, @id]
     SqlRunner.run(sql, values)
   end

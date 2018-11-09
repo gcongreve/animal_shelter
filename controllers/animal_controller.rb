@@ -19,7 +19,6 @@ post '/animals/?' do
   erb(:'animals/create')
 end
 
-
 # edit
 get '/animals/:id/edit/?' do
   @animal = Animal.find_by_id(params[:id])
