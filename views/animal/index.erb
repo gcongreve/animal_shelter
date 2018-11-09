@@ -1,0 +1,22 @@
+<h1>Animals /index</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Type</th>
+    <th>Date Admitted</th>
+    <th>adoptable?</th>
+    <th>Trained?</th>
+    <th>Adopted?</th>
+  </tr>
+  <% @animals.each do |animal| %>
+  <tr>
+    <td><%= animal.name %>"></td>
+    <td><%= animal.type %></td>
+    <td><%= animal.date_admitted %></td>
+    <td><%= animal.adoptable %></td>
+    <td><%= animal.trained %></td>
+    <td><%= animal.adopted %></td>
+  </tr>
+  <% end %>
+</table>
