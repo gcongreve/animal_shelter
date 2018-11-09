@@ -16,7 +16,11 @@ class Animal
     sql = "INSERT INTO animals
     (
       name,
-      type
+      type,
+      date_admitted,
+      adoptable,
+      trained,
+      adopted
     )
     VALUES
     (
@@ -30,17 +34,46 @@ class Animal
 
   def self.all()
     sql = "SELECT * FROM animals"
-    results = SqlRunner.run( sql )
-    return results.map { |hash| Zombie.new( hash ) }
+    animal_hash = SqlRunner.run(sql)
+    return animal_hash.map { |animal| Animal.new(animal) }
   end
 
-  def self.find( id )
-  sql = "SELECT * FROM animals
-  WHERE id = $1"
-  values = [id]
-  results = SqlRunner.run( sql, values )
-  return Animal.new( results.first )
-end
+  def self.find_by_id(id)
+    sql = "SELECT * FROM animals
+    WHERE id = $1"
+    values = [id]
+    results = SqlRunner.run(sql, values)
+    return Animal.new(results.first)
+  end
+
+  def self.delete_all
+    sql = "DELETE FROM animals"
+    SqlRunner.run(sql)
+  end
+
+  def delete
+    sql = "DELETE FROM animals
+            WHERE id = $1"
+    values = @id
+    SqlRunner.run(sql, values)
+
+    def update()
+    sql = "UPDATE animals
+      SET (
+      name,
+      type,
+      date_admitted,
+      adoptable,
+      trained,
+      adopted   )
+    VALUES
+    (
+      $1, $2, $3, $4, $5
+    )
+    WHERE id = $6"
+    values = [@name, @type, @adoptable, @trained, @adopted, @id]
+    SqlRunner.run(sql, values)
+  end
 
 
 end
