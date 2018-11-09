@@ -9,6 +9,6 @@ end
 
 #show individual
 get '/animals/:id/?' do
-  @animal = Animal.find(params[:id])
-  erb(:'animals/show')
+  @animal = Animal.find_by_id(params[:id])
+  erb ( :'animals/show' )
 end
