@@ -12,26 +12,6 @@ class Animal
     @adopted = options['trained']
   end
 
-  def save()
-    sql = "INSERT INTO animals
-    (
-      name,
-      type,
-      date_admitted,
-      adoptable,
-      trained,
-      adopted
-    )
-    VALUES
-    (
-      $1, $2, $3, $4, $5
-    )
-    RETURNING id"
-    values = [@name, @type, @adoptable, @trained, @adopted]
-    results = SqlRunner.run(sql, values)
-    @id = results.first()['id'].to_i
-  end
-
   def self.all()
     sql = "SELECT * FROM animals"
     animal_hash = SqlRunner.run(sql)
@@ -73,6 +53,26 @@ class Animal
     WHERE id = $6"
     values = [@name, @type, @adoptable, @trained, @adopted, @id]
     SqlRunner.run(sql, values)
+  end
+
+  def save()
+    sql = "INSERT INTO animals
+    (
+      name,
+      type,
+      date_admitted,
+      adoptable,
+      trained,
+      adopted
+    )
+    VALUES
+    (
+      $1, $2, $3, $4, $5
+    )
+    RETURNING id"
+    values = [@name, @type, @adoptable, @trained, @adopted]
+    results = SqlRunner.run(sql, values)
+    @id = results.first()['id'].to_i
   end
 
 
