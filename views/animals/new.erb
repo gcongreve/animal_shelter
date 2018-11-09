@@ -1,29 +1,34 @@
-<form action="/animals/<%= @animal.id %>" method="post">
+
+
+<form action="/animals/" method="post">
 
   <label for="name">Name: </label>
-  <input id="name" type="text" name="name" value="<%= @animal.name%>">
+  <input id="name" type="text" name="name">
   <br>
 
   <label for="type">Type: </label>
-  <input id="type" type="text" name="type" value="<%= @animal.type %>">
+  <input id="type" type="text" name="type">
 
   <br>
   <label for="date_admitted">Date Admitted: </label>
-  <input id="date_admitted" type="text" name="date_admitted" value="<%= @animal.date_admitted %>">
+  <input id="date_admitted" type="text" name="date_admitted">
 
   <br>
+  <label for="Adoptable">Adoptable</label>
   <select class="adoptable" name="adoptable">
     <option value="t">True</option>
     <option value="f">False</option>
   </select>
 
   <br>
+  <label for="Trained">Trained</label>
   <select class="trained" name="trained">
     <option value="t">True</option>
     <option value="f">False</option>
   </select>
 
   <br>
+  <label for="Adopted">Adopted</label>
   <select class="adopted" name="adopted">
     <option value="t">True</option>
     <option value="f">False</option>
