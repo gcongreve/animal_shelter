@@ -66,5 +66,9 @@ class Customer
     @id = results.first()['id'].to_i
   end
 
+  def adopt_pet
+    @number_of_adoptions += 1
+  end 
+
 
 end
