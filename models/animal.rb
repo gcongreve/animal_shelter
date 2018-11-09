@@ -80,5 +80,9 @@ class Animal
     @id = results.first()['id'].to_i
   end
 
+  def be_adopted
+    @adopted = true
+  end
+
 
   end
