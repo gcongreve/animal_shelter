@@ -38,6 +38,13 @@ get '/animals/:id/?' do
   erb ( :'animals/show' )
 end
 
+# delete
+# destroy
+post '/animals/:id/delete/?' do
+  @animal = Animal.find_by_id(params[:id])
+  @animal.delete
+  redirect to "/animals"
+end
 
 
   # <br>
