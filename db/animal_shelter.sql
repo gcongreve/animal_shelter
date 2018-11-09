@@ -17,7 +17,7 @@ CREATE TABLE customers
 (
   id SERIAL4 primary key,
   first_name VARCHAR(255),
-  type VARCHAR(255),
+  last_name VARCHAR(255),
   number_of_adoptions INT4
 );
 

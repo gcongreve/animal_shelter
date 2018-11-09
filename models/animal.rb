@@ -90,7 +90,7 @@ class Animal
 
   def be_adoptable
     @adoptable = true
-  end 
+  end
 
 
   end
