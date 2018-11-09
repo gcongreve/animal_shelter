@@ -84,5 +84,13 @@ class Animal
     @adopted = true
   end
 
+  def be_trained
+    @trained = true
+  end
+
+  def be_adoptable
+    @adoptable = true
+  end 
+
 
   end
