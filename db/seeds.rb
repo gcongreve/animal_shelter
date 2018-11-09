@@ -1,4 +1,4 @@
-require_relative('../models/animal')
+require_relative('../models/animal.rb')
 require('pry-byebug')
 
 Animal.delete_all
@@ -20,3 +20,6 @@ animal_b = Animal.new({
   "trained" => true,
   "adopted" => false
   })
+
+  animal_a.save
+  animal_b.save

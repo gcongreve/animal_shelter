@@ -1,6 +1,9 @@
-require_relative ('../db/sqlrunner')
+require_relative ('../db/sql_runner')
 
 class Animal
+
+  attr_accessor :name, :type, :date_admitted, :trained, :adoptable, :trained, :adopted
+  attr_reader :id
 
   def initialize(options)
     @id = options['id'].to_i
@@ -33,25 +36,26 @@ class Animal
 
   def delete
     sql = "DELETE FROM animals
-          WHERE id = $1"
+    WHERE id = $1"
     values = @id
     SqlRunner.run(sql, values)
+  end
 
-    def update()
+  def update()
     sql = "UPDATE animals
-      SET (
-      name,
-      type,
-      date_admitted,
-      adoptable,
-      trained,
-      adopted   )
+    SET (
+    name,
+    type,
+    date_admitted,
+    adoptable,
+    trained,
+    adopted   )
     VALUES
     (
-      $1, $2, $3, $4, $5
+      $1, $2, $3, $4, $5, $6
     )
     WHERE id = $6"
-    values = [@name, @type, @adoptable, @trained, @adopted, @id]
+    values = [@name, @type, @date_admitted,@adoptable, @trained, @adopted, @id]
     SqlRunner.run(sql, values)
   end
 
@@ -67,13 +71,13 @@ class Animal
     )
     VALUES
     (
-      $1, $2, $3, $4, $5
+      $1, $2, $3, $4, $5, $6
     )
     RETURNING id"
-    values = [@name, @type, @adoptable, @trained, @adopted]
+    values = [@name, @type, @date_admitted, @adoptable, @trained, @adopted]
     results = SqlRunner.run(sql, values)
     @id = results.first()['id'].to_i
   end
 
 
-end
+  end
