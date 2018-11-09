@@ -12,7 +12,6 @@ animal_a = Animal.new({
   "date_admitted" => "10/10/10",
   "adoptable" => true,
   "trained" => true,
-  "adopted" => false
   })
 
 animal_b = Animal.new({
@@ -21,7 +20,6 @@ animal_b = Animal.new({
   "date_admitted" => "11/11/11",
   "adoptable" => true,
   "trained" => true,
-  "adopted" => false
   })
 
   customer_a = Customer.new({

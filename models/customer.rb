@@ -6,7 +6,7 @@ class Customer
   attr_reader :id
 
   def initialize(options)
-    @id = options['id'].to_i
+    @id = options['id'].to_i if options['id']
     @first_name = options['first_name']
     @last_name = options['last_name']
     @number_of_adoptions = options['number_of_adoptions']
@@ -68,7 +68,7 @@ class Customer
 
   def adopt_pet
     @number_of_adoptions += 1
-  end 
+  end
 
 
 end
