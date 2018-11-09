@@ -19,6 +19,7 @@ post '/animals/?' do
   erb(:'animals/create')
 end
 
+
 # edit
 get '/animals/:id/edit/?' do
   @animal = Animal.find_by_id(params[:id])
@@ -38,13 +39,14 @@ get '/animals/:id/?' do
   erb ( :'animals/show' )
 end
 
-# delete
 # destroy
 post '/animals/:id/delete/?' do
   @animal = Animal.find_by_id(params[:id])
   @animal.delete
   redirect to "/animals"
 end
+
+
 
 
   # <br>

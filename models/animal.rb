@@ -92,5 +92,11 @@ class Animal
     @adoptable = true
   end
 
+  # def self.return_adoptable
+  #   sql = "SELECT * FROM animals
+  #   WHERE adoptable = true"
+  #   SqlRunner.run(sql)
+  # end
 
-  end
+
+end
