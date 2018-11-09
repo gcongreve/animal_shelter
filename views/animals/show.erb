@@ -2,3 +2,9 @@
 
 <p><%= @animal.name %> </p>
 <p><%= @animal.type %></p>
+
+<p>To edit the animal, click here:</p>
+<a href="/animals/<%= @animal.id %>/edit">Edit</a>
+
+<p>To delete this animal, click here:</p>
+<form action="/animals/<%= @animal.id %>/delete" method="POST"><input type="submit" value="Delete"></form>
