@@ -17,6 +17,13 @@ post '/customers/?' do
   erb(:'customers/create')
 end
 
+#edit individual customer by their id number
+get '/customers/:id/edit/?' do
+  @customer = Customer.find_by_id(params[:id])
+  erb(:'customers/edit')
+end
+
+
 
 #show each individual customer by their id number
 get '/customers/:id/?' do

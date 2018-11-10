@@ -1,0 +1,18 @@
+<form action="/customers/<%= @customer.id %>" method="post">
+
+  <label for="first_name">First Name: </label>
+  <input id="first_name" type="text" name="first_name" value="<%= @customer.first_name %>">
+  <br>
+
+  <label for="last_name">Last Name: </label>
+  <input id="last_name" type="text" name="last_name" value="<%= @customer.last_name %>">
+  <br>
+
+  <label for="number_of_adoptions">Number of Adoptions: </label>
+  <input id="number_of_adoptions" type="number" name="number_of_adoptions" value="<%= @customer.number_of_adoptions %>">
+  <br>
+
+  <input type="submit" value="Update Customer">
+
+
+</form>
