@@ -7,6 +7,7 @@
     <th>Date Admitted</th>
     <th>Healthy?</th>
     <th>Trained?</th>
+    <th>Adoptable?</th>
     <th>Adopted?</th>
     <th>Link to Animal</th>
   </tr>
@@ -17,6 +18,7 @@
     <td><%= animal.date_admitted %></td>
     <td><%= animal.healthy %></td>
     <td><%= animal.trained %></td>
+    <td><%= animal.adoptable? %></td>
     <td><%= animal.adopted? %></td>
     <td><a href="/animals/<%= animal.id %>">link</a></td>
   </tr>

@@ -85,9 +85,16 @@ class Animal
     return adoptions
   end
 
-
   def adopted?
     !adoption.empty?
+  end
+
+  def adoptable?
+    if (@trained == 't') && (@healthy == 't') && (!adopted?)
+      return true
+    else
+      return false
+    end
   end
 
 
