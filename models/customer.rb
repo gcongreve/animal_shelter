@@ -2,14 +2,13 @@ require_relative ('../db/sql_runner')
 
 class Customer
 
-  attr_accessor :first_name, :last_name, :number_of_adoptions
+  attr_accessor :first_name, :last_name
   attr_reader :id
 
   def initialize(options)
     @id = options['id'].to_i if options['id']
     @first_name = options['first_name']
     @last_name = options['last_name']
-    @number_of_adoptions = 0
   end
 
   def self.all()
@@ -44,32 +43,40 @@ class Customer
     SET (
     first_name,
     last_name,
-    number_of_adoptions
        )
     =
-    ( $1, $2, $3 )
+    ( $1, $2 )
     WHERE id = $4"
-    values = [@first_name, @last_name, @number_of_adoptions, @id]
+    values = [@first_name, @last_name, @id]
     SqlRunner.run(sql, values)
   end
 
   def save()
     sql = "INSERT INTO customers
     ( first_name,
-      last_name,
-      number_of_adoptions )
+      last_name )
     VALUES
-    ( $1, $2, $3 )
+    ( $1, $2 )
     RETURNING id"
-    values = [@first_name, @last_name, @number_of_adoptions]
+    values = [@first_name, @last_name ]
     results = SqlRunner.run(sql, values)
     @id = results.first()['id'].to_i
   end
 
-  def adopt_pet
-    @number_of_adoptions += 1
-    update
+  def adoptions()
+    sql = "SELECT adoptions.*
+    FROM adoptions
+	  WHERE customer_id = $1"
+    values = [@id]
+    adoptions_hashs = SqlRunner.run(sql, values)
+    adoptions = adoptions_hashs.map { |adoption| Adoption.new(adoption) }
+    return adoptions
   end
+
+  def number_of_adoptions()
+    adoptions.count
+  end
+
 
   def full_name
     return "#{@first_name} #{@last_name}"
