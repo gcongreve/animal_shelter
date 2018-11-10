@@ -11,6 +11,12 @@ get '/adoptions/new/?' do
   erb (:'adoptions/new')
 end
 
+#edit adoption from id number
+get '/adoptions/:id/edit/?' do
+  @adoption = Adoption.find_by_id(params[:id])
+  erb(:'adoptions/edit')
+end
+
 
 
 #show individual adoptions by id
