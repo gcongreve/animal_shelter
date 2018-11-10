@@ -1,0 +1,16 @@
+<h1>Adoptions /index</h1>
+
+<table>
+  <tr>
+    <th>Pet ID</th>
+    <th>Customer ID</th>
+    <th>Link to adoption</th>
+  </tr>
+  <% @adoptions.each do |adoption| %>
+  <tr>
+    <td><%= adoption.animal_id %></td>
+    <td><%= adoption.customer_id %></td>
+    <td><a href="/adoptions/<%= adoption.id %>">link</a></td>
+  </tr>
+  <% end %>
+</table>

@@ -22,5 +22,44 @@ class Adoption
     @id = results.first()['id'].to_i
   end
 
+  def self.all()
+    sql = "SELECT * FROM adoptions"
+    adoptions_hashs = SqlRunner.run(sql)
+    adoptions = adoptions_hashs.map { |adoption| Adoption.new(adoption) }
+    return adoptions
+  end
+
+  def self.find_by_id(id)
+    sql = "SELECT * FROM adoptions
+            WHERE id = $1"
+    values = [id]
+    result = SqlRunner.run(sql, values)
+    return Adoption.new(result)
+  end
+
+  def self.delete_all
+    sql = "DELETE FROM adoptions"
+    SqlRunner.run(sql)
+  end
+
+  def delete
+    sql = "DELETE FROM adoptions
+    WHERE id = $1"
+    values = [@id]
+    SqlRunner.run(sql, values)
+  end
+
+  def update()
+    sql = "UPDATE adoptions
+    SET (
+    animal_id,
+    customer_id )
+    =
+    ( $1, $2 )
+    WHERE id = $3"
+    values = [@animal_id, @customer_id, @id]
+    SqlRunner.run(sql, values)
+  end
+
 
 end
