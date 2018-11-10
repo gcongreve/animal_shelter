@@ -8,7 +8,16 @@ end
 
 #create new adoption in /new form
 get '/adoptions/new/?' do
+  @animals = Animal.all
+  @customers = Customer.all
   erb (:'adoptions/new')
+end
+
+#posts adoptions detatils from /new to database
+post '/adoptions/?' do
+  @adoption = Adoption.new(params)
+  @adoption.save
+  erb(:'adoptions/create')
 end
 
 #edit adoption from id number

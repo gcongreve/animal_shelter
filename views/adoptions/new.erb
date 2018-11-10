@@ -1,7 +1,23 @@
 <form action="/adoptions" method="post">
 
-  <p>The creating an adoptions thing will go here</p>
 
+  <label>
+    Customer:
+    <select name="customer_id">
+      <%  @customers.each do |customer| %>
+      <option value="<%= customer.id %>"><%= customer.full_name %></option>
+      <% end %>
+    </select>
+  </label>
+
+  <label>
+    Animal:
+    <select name="animal_id">
+      <%  @animals.each do |animal| %>
+      <option value="<%= animal.id %>"><%= animal.name %></option>
+      <% end %>
+    </select>
+  </label>
 
   <input type="submit" value="Create Adoption">
 </form>

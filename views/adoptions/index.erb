@@ -3,20 +3,22 @@
 <table>
   <tr>
     <th>Adoption ID</th>
-    <th>Pet ID</th>
-    <th>Customer ID</th>
+    <th>Pet </th>
+    <th>Customer </th>
     <th>Link to adoption</th>
   </tr>
   <% @adoptions.each do |adoption| %>
   <tr>
     <td><%= adoption.id%></td>
-    <td><%= adoption.animal_id %></td>
-    <td><%= adoption.customer_id %></td>
+    <td> <%= adoption.animal_name %> : <%= adoption.animal.type %></td>
+    <td> <%= adoption.customer.full_name %></td>
     <td><a href="/adoptions/<%= adoption.id %>">link</a></td>
   </tr>
   <% end %>
 </table>
 
-<p><a href="/adoptions/"> Back to adoptions</a></p>
+
+
+<p><a href="/adoptions/new">To create new adoption click here:</a></p>
 
 <p><a href="/"> Back to homescreen</a></p>
