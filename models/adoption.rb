@@ -1,13 +1,15 @@
 require_relative ('../db/sql_runner')
+require_relative('./animal')
+require_relative('./customer')
 
 class Adoption
 
-  attr_reader :id, :customer_id, :animal_id
+  attr_accessor :id, :customer_id, :animal_id
 
   def initialize(options)
     @id = options['id'].to_i if options['id']
-    @animal_id = options['animal_id'].to_i
-    @customer_id = options['customer_id'].to_i
+    @animal_id = options['animal_id']
+    @customer_id = options['customer_id']
   end
 
   def save()
@@ -34,7 +36,7 @@ class Adoption
             WHERE id = $1"
     values = [id]
     result = SqlRunner.run(sql, values)
-    return Adoption.new(result)
+    return Adoption.new(result.first)
   end
 
   def self.delete_all
