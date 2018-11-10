@@ -77,9 +77,20 @@ class Customer
     adoptions.count
   end
 
-
-  def full_name
+  def full_name()
     return "#{@first_name} #{@last_name}"
+  end
+
+  #return customers previously adopted animals
+  def animals()
+    sql = "SELECT animals.* FROM animals
+    INNER JOIN adoptions
+    ON animals.id = animal_id
+    WHERE customer_id = $1"
+    values = [@id]
+    animals_hashs = SqlRunner.run(sql, values)
+    animals = animals_hashs.map { |animal| Animal.new(animal)}
+    return animals
   end
 
 

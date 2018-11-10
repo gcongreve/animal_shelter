@@ -4,6 +4,15 @@
 <p>Last Name: <%=@customer.last_name %></p>
 <p>Number of Adoptions: <%=@customer.number_of_adoptions %></p>
 
+<p>Previous Adoptions:</p>
+
+
+<% @customer.animals.each do |animal| %>
+<p> Name: <%= animal.name %> Type: <%= animal.type %> </p>
+<% end %>
+
+
+
 <p>To edit the customer, click here:</p>
 <a href="/customers/<%= @customer.id %>/edit">Edit</a>
 
