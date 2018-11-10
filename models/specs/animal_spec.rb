@@ -10,7 +10,7 @@ class AnimalTest < MiniTest::Test
       'name' => 'Fred',
       'type' => 'Dog',
       'date_admitted' => "11/11/11",
-      'adoptable' => false,
+      'healthy' => false,
       'trained' => false
       })
     end
@@ -19,11 +19,6 @@ class AnimalTest < MiniTest::Test
     def test_can_be_trained
       @animal1.be_trained
       assert_equal(true, @animal1.trained)
-    end
-
-    def test_can_be_adoptable
-      @animal1.be_adoptable
-      assert_equal(true, @animal1.adoptable)
     end
 
 

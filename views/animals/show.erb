@@ -1,13 +1,15 @@
 <p>The selected animal is:</p>
 
-<p><%= @animal.name %> </p>
-<p><%= @animal.type %></p>
+<p>Name:<%= @animal.name %> </p>
+<p>Type:<%= @animal.type %></p>
+<p>Date date_admitted:<%= @animal.date_admitted %></p>
+<p>Healthy?<%= @animal.healthy %></p>
+<p>Trained?<%= @animal.trained %></p></p>
 
 <p>To edit the animal, click here:</p>
 <a href="/animals/<%= @animal.id %>/edit">Edit</a>
 
 <p>To delete this animal, click here:</p>
-
 <form action="/animals/<%= @animal.id %>/delete" method="post">
   <input type="submit" value="Delete">
 </form>

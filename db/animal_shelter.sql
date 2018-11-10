@@ -8,7 +8,7 @@ CREATE TABLE animals
   name VARCHAR(255),
   type VARCHAR(255),
   date_admitted VARCHAR(255),
-  adoptable BOOLEAN,
+  healthy BOOLEAN,
   trained BOOLEAN
 );
 

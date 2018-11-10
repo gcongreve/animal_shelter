@@ -2,7 +2,7 @@ require_relative ('../db/sql_runner')
 
 class Animal
 
-  attr_accessor :name, :type, :date_admitted, :trained, :adoptable, :trained
+  attr_accessor :name, :type, :date_admitted, :trained, :healthy, :trained
   attr_reader :id
 
   def initialize(options)
@@ -10,7 +10,7 @@ class Animal
     @name = options['name']
     @type = options['type']
     @date_admitted = options['date_admitted']
-    @adoptable = options['adoptable']
+    @healthy = options['healthy']
     @trained = options['trained']
   end
 
@@ -47,14 +47,14 @@ class Animal
     name,
     type,
     date_admitted,
-    adoptable,
+    healthy,
     trained )
     =
     (
       $1, $2, $3, $4, $5
     )
-    WHERE id = $7"
-    values = [@name, @type, @date_admitted, @adoptable, @trained, @id]
+    WHERE id = $6"
+    values = [@name, @type, @date_admitted, @healthy, @trained, @id]
     SqlRunner.run(sql, values)
   end
 
@@ -64,25 +64,16 @@ class Animal
       name,
       type,
       date_admitted,
-      adoptable,
+      healthy,
       trained )
     VALUES
     ( $1, $2, $3, $4, $5 )
     RETURNING id"
-    values = [@name, @type, @date_admitted, @adoptable, @trained]
+    values = [@name, @type, @date_admitted, @healthy, @trained]
     results = SqlRunner.run(sql, values)
     @id = results.first()['id'].to_i
   end
 
-
-
-  def be_trained
-    @trained = true
-  end
-
-  def be_adoptable
-    @adoptable = true
-  end
 
   def adoption()
     sql = "SELECT adoptions.*
@@ -99,11 +90,6 @@ class Animal
     !adoption.empty?
   end
 
-  # def self.return_adoptable
-  #   sql = "SELECT * FROM animals
-  #   WHERE adoptable = true"
-  #   SqlRunner.run(sql)
-  # end
 
 
 end

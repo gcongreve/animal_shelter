@@ -13,7 +13,7 @@ class AdoptionTest < MiniTest::Test
     'name' => 'James',
     'type' => 'Cat',
     'date_admitted' => "11/11/11",
-    'adoptable' => false,
+    'healthy' => false,
     'trained' => false
     })
 
