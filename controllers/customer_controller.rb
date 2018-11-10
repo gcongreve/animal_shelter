@@ -16,3 +16,10 @@ post '/customers/?' do
   @customer.save
   erb(:'customers/create')
 end
+
+
+#show each individual customer by their id number
+get '/customers/:id/?' do
+  @customer = Customer.find_by_id(params[:id])
+  erb(:'customers/show')
+end

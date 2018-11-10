@@ -1,0 +1,14 @@
+<p>The selected Customer is: </p>
+
+<p><%=@customer.first_name %></p>
+<p><%=@customer.last_name %></p>
+<p><%=@customer.number_of_adoptions %></p>
+
+<p>To edit the customer, click here:</p>
+<a href="/customer/<%= @customer.id %>/edit">Edit</a>
+
+<p>To delete this customer, click here:</p>
+
+<form action="/customer/<%= @customer.id %>/delete" method="post">
+  <input type="submit" value="Delete">
+</form>
