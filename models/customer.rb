@@ -9,7 +9,7 @@ class Customer
     @id = options['id'].to_i if options['id']
     @first_name = options['first_name']
     @last_name = options['last_name']
-    @number_of_adoptions = options['number_of_adoptions']
+    @number_of_adoptions = 0
   end
 
   def self.all()
@@ -68,6 +68,7 @@ class Customer
 
   def adopt_pet
     @number_of_adoptions += 1
+    update
   end
 
   def full_name

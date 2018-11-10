@@ -16,6 +16,10 @@ end
 #posts adoptions detatils from /new to database
 post '/adoptions/?' do
   @adoption = Adoption.new(params)
+  # animal = @adoption.animal
+  # customer = @adoption.customer
+  # animal.be_adopted
+  # customer.adopt_pet
   @adoption.save
   erb(:'adoptions/create')
 end

@@ -82,6 +82,7 @@ class Animal
 
   def be_adopted
     @adopted = true
+    update
   end
 
   def be_trained

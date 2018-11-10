@@ -22,7 +22,6 @@ class AdoptionTest < MiniTest::Test
    'id' => 1,
    'first_name' => 'Steve',
    'last_name' => 'Humanguy',
-   'number_of_adoptions' => 0
    })
 
    @adoption_x = Adoption.new({
