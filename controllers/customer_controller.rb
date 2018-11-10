@@ -23,6 +23,19 @@ get '/customers/:id/edit/?' do
   erb(:'customers/edit')
 end
 
+#post the edits to the database
+post '/customers/:id/?' do
+  @customer = Customer.new(params)
+  @customer.update
+  erb ( :'customers/update')
+end
+
+#delete individual customer from the database, using their id number from address bar. From /show view
+post '/customers/:id/delete/?' do
+  @customer = Customer.find_by_id(params[:id])
+  @customer.delete
+  redirect to '/customers'
+end
 
 
 #show each individual customer by their id number
