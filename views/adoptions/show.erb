@@ -1,6 +1,6 @@
 <p>The selected adoption is :</p>
 <br>
-<p>Animal <%= @adoption.animal_id %> was adopted by customer <%= @adoption.customer_id %> </p>
+<p>Animal <a href="/animals/<%= @adoption.animal_id %>"> <%= @adoption.animal_name %> </a> was adopted by customer <a href="/customers/<%=@adoption.customer_id%>"> <%= @adoption.customer.full_name %> </a></p>
 <br>
 
 <p><a href="/adoptions/"> Back to adoptions</a></p>

@@ -87,7 +87,7 @@ class Adoption
     WHERE adoptions.id = $1"
     values = [@id]
     result = SqlRunner.run(sql, values)
-    customer = Animal.new(result.first)
+    customer = Customer.new(result.first)
     return customer
   end
 
