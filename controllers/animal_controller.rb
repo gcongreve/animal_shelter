@@ -45,18 +45,3 @@ post '/animals/:id/delete/?' do
   @animal.delete
   redirect to "/animals"
 end
-
-
-
-
-  # <br>
-  # <label for="adoptable">Date Admitted: </label>
-  # <input id="adoptable" type="text" name="adoptable" value="<%= @animal.adoptable %>">
-  #
-  # <br>
-  # <label for="trained">Date Admitted: </label>
-  # <input id="trained" type="text" name="trained" value="<%= @animal.trained %>">
-  #
-  # <br>
-  # <label for="adopted">Date Admitted: </label>
-  # <input id="adopted" type="text" name="adopted" value="<%= @animal.adopted %>">
