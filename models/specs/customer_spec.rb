@@ -18,6 +18,10 @@ class CustomerTest < MiniTest::Test
     assert_equal(1, @customer1.number_of_adoptions)
   end
 
+  def test_customer_returns_full_name
+    assert_equal('Steve Humanguy', @customer1.full_name)
+  end
+
 
 
 
