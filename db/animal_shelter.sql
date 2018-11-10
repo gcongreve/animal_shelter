@@ -9,8 +9,7 @@ CREATE TABLE animals
   type VARCHAR(255),
   date_admitted VARCHAR(255),
   adoptable BOOLEAN,
-  trained BOOLEAN,
-  adopted BOOLEAN
+  trained BOOLEAN
 );
 
 CREATE TABLE customers

@@ -14,8 +14,7 @@ class AdoptionTest < MiniTest::Test
     'type' => 'Cat',
     'date_admitted' => "11/11/11",
     'adoptable' => false,
-    'trained' => false,
-    'adopted' => false
+    'trained' => false
     })
 
    @customer_x = Customer.new({
