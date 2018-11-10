@@ -2,14 +2,14 @@
 
 <table>
   <tr>
-    <<th>Adoption ID</th>
+    <th>Adoption ID</th>
     <th>Pet ID</th>
     <th>Customer ID</th>
     <th>Link to adoption</th>
   </tr>
   <% @adoptions.each do |adoption| %>
   <tr>
-    <<td><%= adoption.id%></td>
+    <td><%= adoption.id%></td>
     <td><%= adoption.animal_id %></td>
     <td><%= adoption.customer_id %></td>
     <td><a href="/adoptions/<%= adoption.id %>">link</a></td>

@@ -8,7 +8,7 @@ class AdoptionTest < MiniTest::Test
 
   def setup
 
-   @animal_a = Animal.new({
+   @animal_x = Animal.new({
     'id' => 1,
     'name' => 'James',
     'type' => 'Cat',
@@ -27,7 +27,7 @@ class AdoptionTest < MiniTest::Test
 
    @adoption_a = Adoption.new({
      'id' => 1,
-     'animal_id' => @animal_a.id,
+     'animal_id' => @animal_x.id,
      'customer_id' => @customer_a.id
      })
   end
@@ -35,6 +35,10 @@ class AdoptionTest < MiniTest::Test
   def test_adoption_can_take_in_ids
     assert_equal(1, @adoption_a.customer_id)
     assert_equal(1, @adoption_a.animal_id )
+  end
+
+  def test_adoption_can_return_animal
+    assert_equal("James", @adoption_a.animal_name)
   end
 
 

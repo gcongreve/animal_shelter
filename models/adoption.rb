@@ -63,5 +63,20 @@ class Adoption
     SqlRunner.run(sql, values)
   end
 
+  #return animal object from adoption
+  def animal()
+    sql = "SELECT animals.* FROM animals
+    INNER JOIN adoptions
+    ON animals.id = animal_id
+    WHERE adoptions.id = $1"
+    values = [@id]
+    result = SqlRunner.run(sql, values)
+    animal = Animal.new(result.first)
+    return animal
+  end
+
+  def animal_name()
+    animal.name
+  end
 
 end
