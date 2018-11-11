@@ -1,15 +1,16 @@
 <p>The selected animal is:</p>
 
 <p>Name:<%= @animal.name %> </p>
-<p>Species:<%= @animal.species %> </p>
-<p>Type:<%= @animal.type %></p>
+<p>Type:<%= @animal.display_type %></p>
 <p>Date date_admitted:<%= @animal.date_admitted %></p>
 <p>Healthy?<%= @animal.healthy %></p>
 <p>Trained?<%= @animal.trained %></p></p>
+<p>Adoptable?<%= @animal.adoptable? %></p>
+<p>Adopted?<%= @animal.adopted? %></p>
 <br>
-<p>Test : <%=@animal.display_type %></p>
 
-<p>To edit the animal, click here:</p>
+
+<p>To edit this animal, click here:</p>
 <a href="/animals/<%= @animal.id %>/edit">Edit</a>
 
 <p>To delete this animal, click here:</p>
