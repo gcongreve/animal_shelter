@@ -4,11 +4,11 @@
 <p>Last Name: <%=@customer.last_name %></p>
 <p>Number of Adoptions: <%=@customer.number_of_adoptions %></p>
 
-<p>Previous Adoptions:</p>
+<p><strong>Previous Adoptions:</strong></p>
 
 
 <% @customer.animals.each do |animal| %>
-<p> Name: <%= animal.name %> Type: <%= animal.type %> </p>
+<p> Name: <%= animal.name %> the <%= animal.display_type %> </p>
 <% end %>
 
 
