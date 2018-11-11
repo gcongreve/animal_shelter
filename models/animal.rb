@@ -35,6 +35,38 @@ class Animal
     SqlRunner.run(sql)
   end
 
+  def self.in_training
+    sql = "SELECT animals.* FROM animals
+    WHERE trained = false;"
+    untrained_hash = SqlRunner.run(sql)
+    untrained = untrained_hash.map { |animal| Animal.new(animal) }
+    return untrained
+  end
+
+  def self.dogs
+    sql = "SELECT animals.* FROM animals
+    WHERE species = 'Dog' "
+    dogs_hash = SqlRunner.run(sql)
+    dogs = dogs_hash.map { |dog| Animal.new(dog) }
+    return dogs
+  end
+
+  def self.cats
+    sql = "SELECT animals.* FROM animals
+    WHERE species = 'Cat' "
+    cats_hash = SqlRunner.run(sql)
+    cats = cats_hash.map { |cat| Animal.new(cat) }
+    return cats
+  end
+
+  def self.others
+    sql = "SELECT animals.* FROM animals
+    WHERE species = 'Other' "
+    others_hash = SqlRunner.run(sql)
+    others = others_hash.map { |other| Animal.new(other) }
+    return others
+  end
+
   def delete
     sql = "DELETE FROM animals
     WHERE id = $1"
