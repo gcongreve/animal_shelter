@@ -43,6 +43,14 @@ class Animal
     return untrained
   end
 
+  def self.unhealthy
+    sql = "SELECT animals.* FROM animals
+    WHERE healthy = false;"
+    untrained_hash = SqlRunner.run(sql)
+    untrained = untrained_hash.map { |animal| Animal.new(animal) }
+    return untrained
+  end
+
   def self.dogs
     sql = "SELECT animals.* FROM animals
     WHERE species = 'Dog' "
@@ -129,7 +137,6 @@ class Animal
       return false
     end
   end
-
 
   def display_type()
     if @species.downcase == "other"
