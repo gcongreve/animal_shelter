@@ -22,6 +22,16 @@ class Animal
     return animals
   end
 
+  def self.adoptable
+    adoptable = []
+    all.each do |animal|
+      if animal.adoptable?
+        adoptable << animal
+      end
+    end
+    return adoptable
+  end
+
   def self.find_by_id(id)
     sql = "SELECT * FROM animals
     WHERE id = $1"

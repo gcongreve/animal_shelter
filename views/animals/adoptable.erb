@@ -1,0 +1,18 @@
+<p> The Adoptable Animals in the shelter are: </p>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Type</th>
+    <th>Date Admitted</th>
+    <th>Link to Animal</th>
+  </tr>
+  <% @animals.each do |animal| %>
+  <tr>
+    <td><%= animal.name %></td>
+    <td><%= animal.display_type %></td>
+    <td><%= animal.date_admitted %></td>
+    <td><a href="/animals/<%= animal.id %>">link</a></td>
+  </tr>
+  <% end %>
+</table>

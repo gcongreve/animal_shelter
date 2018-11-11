@@ -5,6 +5,17 @@ get '/animals/untrained/?' do
   erb ( :'animals/untrained')
 end
 
+get '/animals/adoptable/?' do
+  @animals = Animal.adoptable  
+  erb ( :'animals/adoptable')
+end
+
+
+get '/animals/unwell/?' do
+  @animals = Animal.unhealthy
+  erb ( :'animals/unwell')
+end
+
 #index
 get '/animals/?' do
   @animals = Animal.all
