@@ -3,9 +3,9 @@
 <table>
   <tr>
     <th>Animals Currently in Shelter</th>
-    <th>Adoptable Animals</th>
-    <th>Untrained Animals </th>
-    <th>Unwell Animals</th>
+    <th><a href="/animals/adoptable">Adoptable Animals</a></th>
+    <th><a href="/animals/untrained">Untrained Animals </a></th>
+    <th><a href="/animals/unwell">Unwell Animals</a></th>
   </tr>
   <tr>
 
@@ -15,7 +15,10 @@
     <td> <%= Animal.unhealthy.count %></td>
   </tr>
 </table>
-
+<br><br>
+<p><a href="/animals/new"">To create new animal click here</a></p>
+<br>
+<p><a href="/animals/">To see every animal who entered the shelter click here</a></p>
 
 <h2>The Animals currently in the shelter are:</h2>
 
@@ -33,7 +36,7 @@
   <% if animal.in_shelter? %>
   <tr>
     <td><%= animal.name %></td>
-    <td><%= animal.type %></td>
+    <td><%= animal.display_type %></td>
     <td><%= animal.date_admitted %></td>
     <td><%= animal.healthy %></td>
     <td><%= animal.trained %></td>
@@ -45,4 +48,3 @@
 </table>
 <br>
 <br>
-<p><a href="/animals/new">To create new animal click here:</a></p>
