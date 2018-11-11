@@ -5,6 +5,11 @@ get '/animals/untrained/?' do
   erb ( :'animals/untrained')
 end
 
+get '/animals/home/?' do
+  @animals = Animal.all 
+  erb ( :'animals/home')
+end
+
 get '/animals/adoptable/?' do
   @animals = Animal.adoptable
   erb ( :'animals/adoptable')

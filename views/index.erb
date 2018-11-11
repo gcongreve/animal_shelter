@@ -1,24 +1,7 @@
 <h1> Do you want to see:</h1>
 
-<p><a href="/animals/">animals</a></p>
+<p><a href="/animals/home">animals</a></p>
 
 <p><a href="/customers">customers</a></p>
 
 <p><a href="/adoptions">adoptions</a></p>
-
-
-<table>
-  <tr>
-    <th>Animals Currently in Shelter</th>
-    <th>Adoptable Animals</th>
-    <th>Untrained Animals </th>
-    <th>Unwell Animals</th>
-  </tr>
-  <tr>
-
-    <td> <%= Animal.in_shelter_number %></td>
-    <td> <%= Animal.adoptable_number %></td>
-    <td> <%= Animal.untrained.count %></td>
-    <td> <%= Animal.unhealthy.count %></td>
-  </tr>
-</table>

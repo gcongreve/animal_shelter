@@ -1,6 +1,23 @@
-<h1>Animals /index</h1>
 
-<h2>All the animals who ever entered the shelter:</h2>
+
+<table>
+  <tr>
+    <th>Animals Currently in Shelter</th>
+    <th>Adoptable Animals</th>
+    <th>Untrained Animals </th>
+    <th>Unwell Animals</th>
+  </tr>
+  <tr>
+
+    <td> <%= Animal.in_shelter_number %></td>
+    <td> <%= Animal.adoptable_number %></td>
+    <td> <%= Animal.untrained.count %></td>
+    <td> <%= Animal.unhealthy.count %></td>
+  </tr>
+</table>
+
+
+<h2>The Animals currently in the shelter are:</h2>
 
 <table>
   <tr>
@@ -10,20 +27,20 @@
     <th>Healthy?</th>
     <th>Trained?</th>
     <th>Adoptable?</th>
-    <th>Adopted?</th>
     <th>Link to Animal</th>
   </tr>
   <% @animals.each do |animal| %>
+  <% if animal.in_shelter? %>
   <tr>
     <td><%= animal.name %></td>
-    <td><%= animal.display_type %></td>
+    <td><%= animal.type %></td>
     <td><%= animal.date_admitted %></td>
     <td><%= animal.healthy %></td>
     <td><%= animal.trained %></td>
     <td><%= animal.adoptable? %></td>
-    <td><%= animal.adopted? %></td>
     <td><a href="/animals/<%= animal.id %>">link</a></td>
   </tr>
+  <% end %>
   <% end %>
 </table>
 <br>
