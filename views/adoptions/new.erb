@@ -15,7 +15,7 @@
     <select name="animal_id">
       <%  @animals.each do |animal| %>
         <% if animal.adoptable? == true %>
-            <option value="<%= animal.id %>"><%= animal.name %> : <%= animal.type %></option>
+            <option value="<%= animal.id %>"><%= animal.name %> : <%= animal.display_type %></option>
         <% end %>
       <% end %>
     </select>
