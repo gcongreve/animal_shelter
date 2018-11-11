@@ -99,5 +99,16 @@ class Animal
   end
 
 
+  def display_type()
+    if @species.downcase == "other"
+      return @type
+    elsif
+      @type.downcase == "unknown"
+      return @species
+    else
+      return "#{@type} #{@species}"
+    end
+  end
+
 
 end

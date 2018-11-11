@@ -5,8 +5,8 @@
 
    <% if @adoption.animal.species == "Other" %>
       <%= @adoption.type %>
-    <% else %>
-    <%= @adoption.animal.species %>
+      <% else %>
+      <%= @adoption.animal.species %>
     <% end %>
 
  was adopted by customer <a href="/customers/<%=@adoption.customer_id%>"> <%= @adoption.customer.full_name %> </a></p>
