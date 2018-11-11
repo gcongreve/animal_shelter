@@ -1,0 +1,29 @@
+<p>The other animals currently in the shelter are:</p>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Type</th>
+    <th>Date Admitted</th>
+    <th>Healthy?</th>
+    <th>Trained?</th>
+    <th>Adoptable?</th>
+    <th>Link to Animal</th>
+  </tr>
+  <% @others.each do |others| %>
+  <% if others.in_shelter? %>
+  <tr>
+    <td><%= others.name %></td>
+    <td><%= others.type %></td>
+    <td><%= others.date_admitted %></td>
+    <td><%= others.healthy %></td>
+    <td><%= others.trained %></td>
+    <td><%= others.adoptable? %></td>
+    <td><a href="/animals/<%= others.id %>">link</a></td>
+  </tr>
+  <% end %>
+  <% end %>
+</table>
+<br>
+<br>
+<p><a href="/animals/new">To create new animal click here:</a></p>

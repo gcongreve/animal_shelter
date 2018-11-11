@@ -6,10 +6,24 @@ get '/animals/untrained/?' do
 end
 
 get '/animals/adoptable/?' do
-  @animals = Animal.adoptable  
+  @animals = Animal.adoptable
   erb ( :'animals/adoptable')
 end
 
+get '/animals/dogs/?' do
+  @dogs = Animal.dogs
+  erb ( :'animals/dogs')
+end
+
+get '/animals/cats/?' do
+  @cats = Animal.cats
+  erb ( :'animals/cats')
+end
+
+get '/animals/others/?' do
+  @others = Animal.others
+  erb ( :'animals/others')
+end
 
 get '/animals/unwell/?' do
   @animals = Animal.unhealthy

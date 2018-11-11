@@ -22,6 +22,7 @@ class Animal
     return animals
   end
 
+
   def self.adoptable
     adoptable = []
     all.each do |animal|
@@ -67,9 +68,6 @@ class Animal
     return number
   end
 
-  def self.in_shelter
-    unhealthy.count + untrained.count + adoptable_number
-  end
 
   def self.dogs
     sql = "SELECT animals.* FROM animals
@@ -77,6 +75,17 @@ class Animal
     dogs_hash = SqlRunner.run(sql)
     dogs = dogs_hash.map { |dog| Animal.new(dog) }
     return dogs
+  end
+
+
+  def self.in_shelter
+    shelter = []
+    all.each do |animal|
+      if animal.in_shelter?
+        shelter << animal
+      end
+    end
+    return shelter
   end
 
   def self.cats
@@ -148,6 +157,10 @@ class Animal
 
   def adopted?
     !adoption.empty?
+  end
+
+  def in_shelter?
+    adoption.empty?
   end
 
   def adoptable?

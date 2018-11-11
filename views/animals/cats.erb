@@ -1,0 +1,29 @@
+<p>The cats currently in the shelter are:</p>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Type</th>
+    <th>Date Admitted</th>
+    <th>Healthy?</th>
+    <th>Trained?</th>
+    <th>Adoptable?</th>
+    <th>Link to Animal</th>
+  </tr>
+  <% @cats.each do |cat| %>
+  <% if cat.in_shelter? %>
+  <tr>
+    <td><%= cat.name %></td>
+    <td><%= cat.type %></td>
+    <td><%= cat.date_admitted %></td>
+    <td><%= cat.healthy %></td>
+    <td><%= cat.trained %></td>
+    <td><%= cat.adoptable? %></td>
+    <td><a href="/animals/<%= cat.id %>">link</a></td>
+  </tr>
+  <% end %>
+  <% end %>
+</table>
+<br>
+<br>
+<p><a href="/animals/new">To create new animal click here:</a></p>
