@@ -9,7 +9,8 @@ Customer.delete_all
 
 animal_a = Animal.new({
   "name" => "Alf",
-  "type" => "Dog",
+  "species" => "Dog",
+  "type" => "Mongrel",
   "date_admitted" => "10/10/10",
   "healthy" => true,
   "trained" => true,
@@ -17,7 +18,8 @@ animal_a = Animal.new({
 
 animal_b = Animal.new({
   "name" => "Bert",
-  "type" => "Cat",
+  "species" => "Cat",
+  "type" => "Tabby",
   "date_admitted" => "11/11/11",
   "healthy" => true,
   "trained" => true,

@@ -3,6 +3,7 @@
 <table>
   <tr>
     <th>Name</th>
+    <th>Species</th>
     <th>Type</th>
     <th>Date Admitted</th>
     <th>Healthy?</th>
@@ -14,6 +15,7 @@
   <% @animals.each do |animal| %>
   <tr>
     <td><%= animal.name %></td>
+    <td><%= animal.species %></td>
     <td><%= animal.type %></td>
     <td><%= animal.date_admitted %></td>
     <td><%= animal.healthy %></td>

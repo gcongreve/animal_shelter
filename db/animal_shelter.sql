@@ -6,6 +6,7 @@ CREATE TABLE animals
 (
   id SERIAL4 primary key,
   name VARCHAR(255),
+  species VARCHAR(255),
   type VARCHAR(255),
   date_admitted VARCHAR(255),
   healthy BOOLEAN,
