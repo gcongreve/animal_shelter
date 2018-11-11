@@ -12,7 +12,7 @@
   <input type="radio" name="species" value="Other" <%= 'checked' if @animal.species == "Other" %>> Other<br>
   <br>
 
-  <label for="type">Type: </label>
+  <label for="type">Species of animal/breed of cat/dog: </label>
   <input id="type" type="text" name="type" value="<%= @animal.type %>">
 
   <br>
@@ -22,17 +22,17 @@
   <br>
   <label for="healthy">Healthy</label>
   <select class="healthy" name="healthy">
-    <option value="t">True</option>
-    <option value="f">False</option>
+    <option value="t" <%= 'selected' if @animal.healthy == "t" %>>True</option>
+    <option value="f" <%= 'selected' if @animal.healthy == "f" %>>False</option>
   </select>
 
   <br>
   <label for="trained">Trained</label>
   <select class="trained" name="trained">
-    <option value="t">True</option>
-    <option value="f">False</option>
+    <option value="t" <%= 'selected' if @animal.trained == "t" %>>True</option>
+    <option value="f" <%= 'selected' if @animal.trained == "f" %>>False</option>
   </select>
-
+  <br>
 
   <input type="submit" value="Update Animal">
 

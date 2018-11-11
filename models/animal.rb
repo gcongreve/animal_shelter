@@ -2,7 +2,7 @@ require_relative ('../db/sql_runner')
 
 class Animal
 
-  attr_accessor :name, :type, :species, :date_admitted, :trained, :healthy, :trained
+  attr_accessor :name, :type, :species, :date_admitted, :trained, :healthy
   attr_reader :id
 
   def initialize(options)
@@ -53,7 +53,7 @@ class Animal
     trained )
     =
     ( $1, $2, $3, $4, $5, $6 )
-    WHERE id = $6"
+    WHERE id = $7"
     values = [@name, @species, @type, @date_admitted, @healthy, @trained, @id]
     SqlRunner.run(sql, values)
   end
