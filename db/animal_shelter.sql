@@ -23,6 +23,6 @@ CREATE TABLE customers
 CREATE TABLE adoptions
 (
   id SERIAL4 primary key,
-  animal_id INT4 REFERENCES animals(id),
-  customer_id INT4 REFERENCES customers(id)
+  animal_id INT4 REFERENCES animals(id) ON DELETE CASCADE,
+  customer_id INT4 REFERENCES customers(id) ON DELETE CASCADE
 );
