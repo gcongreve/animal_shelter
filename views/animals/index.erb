@@ -2,6 +2,24 @@
 
 <table>
   <tr>
+    <th>Animals Currently in Shelter</th>
+    <th>Adoptable Animals</th>
+    <th>Untrained Animals </th>
+    <th>Unwell Animals</th>
+  </tr>
+  <tr>
+
+    <td> <%= Animal.in_shelter %></td>
+    <td> <%= Animal.adoptable_number %></td>
+    <td> <%= Animal.untrained.count %></td>
+    <td> <%= Animal.unhealthy.count %></td>
+  </tr>
+</table>
+
+<br><br><br><br>
+
+<table>
+  <tr>
     <th>Name</th>
     <th>Type</th>
     <th>Date Admitted</th>

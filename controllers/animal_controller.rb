@@ -1,8 +1,12 @@
 
 
+get '/animals/untrained/?' do
+  @animals = Animal.untrained
+  erb ( :'animals/untrained')
+end
+
 #index
 get '/animals/?' do
-  "Hello World"
   @animals = Animal.all
   erb ( :'animals/index' )
 end
