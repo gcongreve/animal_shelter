@@ -150,10 +150,22 @@ class Animal
     FROM adoptions
 	  WHERE animal_id = $1"
     values = [@id]
-    adoptions_hashs = SqlRunner.run(sql, values)
-    adoptions = adoptions_hashs.map { |adoption| Adoption.new(adoption) }
-    return adoptions
+    adoption_hash = SqlRunner.run(sql, values)
+    adoption = adoption_hash.map { |adoption| Adoption.new(adoption) }
+    return adoption
   end
+
+  def customer
+    sql = "SELECT customers.* FROM customers
+    INNER JOIN adoptions
+    ON customers.id = customer_id
+    WHERE animal_id = $1"
+    values = [@id]
+    customer_hash = SqlRunner.run(sql, values)
+    customer = customer_hash.map { |customer| Customer.new(customer)}
+    return customer.first
+  end
+
 
   def adopted?
     !adoption.empty?
