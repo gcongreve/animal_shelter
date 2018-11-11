@@ -35,7 +35,7 @@ class Animal
     SqlRunner.run(sql)
   end
 
-  def self.in_training
+  def self.untrained
     sql = "SELECT animals.* FROM animals
     WHERE trained = false;"
     untrained_hash = SqlRunner.run(sql)
@@ -46,9 +46,19 @@ class Animal
   def self.unhealthy
     sql = "SELECT animals.* FROM animals
     WHERE healthy = false;"
-    untrained_hash = SqlRunner.run(sql)
-    untrained = untrained_hash.map { |animal| Animal.new(animal) }
-    return untrained
+    unhealthy_hash = SqlRunner.run(sql)
+    unhealthy = unhealthy_hash.map { |animal| Animal.new(animal) }
+    return unhealthy
+  end
+
+  def self.adoptable_number
+    number = 0
+    all.each { |animal| animal.adoptable? ? number += 1 : 0 }
+    return number
+  end
+
+  def self.in_shelter
+    unhealthy.count + untrained.count + adoptable_number
   end
 
   def self.dogs

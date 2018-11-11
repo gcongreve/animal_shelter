@@ -5,3 +5,20 @@
 <p><a href="/customers">customers</a></p>
 
 <p><a href="/adoptions">adoptions</a></p>
+
+
+<table>
+  <tr>
+    <th>Animals Currently in Shelter</th>
+    <th>Adoptable Animals</th>
+    <th>Untrained Animals </th>
+    <th>Unwell Animals</th>
+  </tr>
+  <tr>
+
+    <td> <%= Animal.in_shelter %></td>
+    <td> <%= Animal.adoptable_number %></td>
+    <td> <%= Animal.untrained.count %></td>
+    <td> <%= Animal.unhealthy.count %></td>
+  </tr>
+</table>
