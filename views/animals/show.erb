@@ -13,8 +13,6 @@
 </p>
 <br>
 
-
-
 <p>To edit this animal, click here:</p>
 <a href="/animals/<%= @animal.id %>/edit">Edit</a>
 
@@ -22,3 +20,17 @@
 <form action="/animals/<%= @animal.id %>/delete" method="post">
   <input type="submit" value="Delete">
 </form>
+
+<p>Potential Customers who may be interested in <%=@animal.name %> are : </p>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>link</th>
+  </tr>
+  <% @animal.customer_preference.each do |customer| %>
+  <tr>
+    <td><%= customer.full_name %></td>
+    <td><a href="/customers/<%= customer.id %>">link</a></td>
+  </tr>
+  <% end %>
+</table>

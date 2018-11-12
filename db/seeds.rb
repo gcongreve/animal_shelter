@@ -11,7 +11,7 @@ animal_a = Animal.new({
   "name" => "Alf",
   "species" => "Dog",
   "type" => "Mongrel",
-  "date_admitted" => "10/10/10",
+  "date_admitted" => "2018-11-11",
   "healthy" => true,
   "trained" => true,
   })
@@ -20,7 +20,7 @@ animal_b = Animal.new({
   "name" => "Bert",
   "species" => "Cat",
   "type" => "Tabby",
-  "date_admitted" => "11/11/11",
+  "date_admitted" => "2018-11-11",
   "healthy" => true,
   "trained" => true,
   })

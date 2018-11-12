@@ -192,9 +192,6 @@ class Animal
     in_shelter? && !adoptable?
   end
 
-
-
-
   def display_type()
     if @species.downcase == "other"
       return @type
@@ -205,6 +202,16 @@ class Animal
       return "#{@type} #{@species}"
     end
   end
+
+  def customer_preference()
+    sql = "SELECT customers.* FROM customers
+    WHERE customers.species_preference = $1 "
+    values = [@species]
+    customers_hashs = SqlRunner.run(sql, values)
+    customers = customers_hashs.map { |customer| Customer.new(customer)}
+    return customers
+  end
+
 
 
 end
