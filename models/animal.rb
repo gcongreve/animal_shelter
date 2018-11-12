@@ -78,6 +78,15 @@ class Animal
   end
 
 
+  def self.by_species(animal_species)
+    sql = "SELECT animals.* FROM animals
+    WHERE species = $1"
+    values = [animal_species]
+    species_hash = SqlRunner.run(sql, values)
+    animals = species_hash.map { |animal| Animal.new(animal) }
+    return animals
+  end
+
   def self.in_shelter
     shelter = []
     all.each do |animal|

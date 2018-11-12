@@ -1,0 +1,77 @@
+
+<h2>The x currently in the shelter are:</h2>
+
+<h3>Adoptable : </h3>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Type</th>
+    <th>Date Admitted</th>
+    <th>Link to Animal</th>
+  </tr>
+  <% @animals.each do |animal| %>
+  <% if animal.adoptable? %>
+  <tr>
+    <td><%= animal.name %></td>
+    <td><%= animal.type %></td>
+    <td><%= animal.date_admitted %></td>
+    <td><a href="/animals/<%= animal.id %>">link</a></td>
+  </tr>
+  <% end %>
+  <% end %>
+</table>
+<br>
+<h3>Untrained x s : </h3>
+<br>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Type</th>
+    <th>Date Admitted</th>
+    <th>Healthy?</th>
+    <th>Adoptable?</th>
+    <th>Link to Animal</th>
+  </tr>
+  <% @animals.each do |animal| %>
+  <% if animal.trained == 'f' %>
+  <tr>
+    <td><%= animal.name %></td>
+    <td><%= animal.type %></td>
+    <td><%= animal.date_admitted %></td>
+    <td><%= animal.healthy %></td>
+    <td><%= animal.adoptable? %></td>
+    <td><a href="/animals/<%= animal.id %>">link</a></td>
+  </tr>
+  <% end %>
+  <% end %>
+</table>
+<br>
+<h3>Unwell x s : </h3>
+<br>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Type</th>
+    <th>Date Admitted</th>
+    <th>Trained?</th>
+    <th>Adoptable?</th>
+    <th>Link to Animal</th>
+  </tr>
+  <% @animals.each do |animal| %>
+  <% if animal.healthy == 'f' %>
+  <tr>
+    <td><%= animal.name %></td>
+    <td><%= animal.type %></td>
+    <td><%= animal.date_admitted %></td>
+    <td><%= animal.trained %></td>
+    <td><%= animal.adoptable? %></td>
+    <td><a href="/animals/<%= animal.id %>">link</a></td>
+  </tr>
+  <% end %>
+  <% end %>
+</table>
+
+<br>
+<br>
+<p><a href="/animals/new">To create new animal click here:</a></p>

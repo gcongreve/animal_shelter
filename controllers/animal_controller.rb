@@ -1,12 +1,17 @@
 
 
+get '/animals/type/:species/?' do
+  @animals = Animal.by_species(params['species'].capitalize)
+  erb( :'animals/species')
+end
+
 get '/animals/untrained/?' do
   @animals = Animal.untrained
   erb ( :'animals/untrained')
 end
 
 get '/animals/home/?' do
-  @animals = Animal.all 
+  @animals = Animal.all
   erb ( :'animals/home')
 end
 
