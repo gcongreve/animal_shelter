@@ -1,16 +1,29 @@
 <p>The selected animal is:</p>
 
-<p>Name: <%= @animal.name %> </p>
-<p>Type: <%= @animal.display_type %></p>
-<p>Date admitted: <%= @animal.date_admitted %></p>
-<p>Healthy? <%= @animal.healthy %></p>
-<p>Trained? <%= @animal.trained %></p></p>
-<p>Adoptable? <%= @animal.adoptable? %></p>
-<p>Adopted? <%= @animal.adopted? %> Adopted by:
-<% if @animal.adopted? %>
-<%= @animal.customer.full_name %>
-<% end %>
-</p>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Type</th>
+    <th>Date Admitted</th>
+    <th>Healthy?</th>
+    <th>Trained?</th>
+    <th>Adoptable?</th>
+    <th>Adopted?</th>
+    <th>Adopted by </th>
+  </tr>
+  <tr>
+    <td><%= @animal.name %></td>
+    <td><%= @animal.display_type %></td>
+    <td><%= @animal.date_admitted %></td>
+    <td><%= @animal.healthy %></td>
+    <td><%= @animal.trained %></td>
+    <td><%= @animal.adoptable? %></td>
+    <td><%= @animal.adopted? %></td>
+    <td><% if @animal.adopted? %>
+    <%= @animal.customer.full_name %>
+    <% end %></td>
+  </tr>
+</table>
 <br>
 
 <p>To edit this animal, click here:</p>
