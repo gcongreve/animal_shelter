@@ -1,23 +1,47 @@
-<p>The cats currently in the shelter are:</p>
+<a href="/animals/others/">Other Animals In Shelter</a>
+<a href="/animals/dogs">Dogs In Shelter</a>
+
+<h3>The cats currently in the shelter are:</h3>
+
+<h3>Adoptable Cats:</h3>
 
 <table>
   <tr>
     <th>Name</th>
     <th>Type</th>
     <th>Date Admitted</th>
+    <th>Link to Animal</th>
+  </tr>
+  <% @cats.each do |cat| %>
+  <% if cat.adoptable? %>
+  <tr>
+    <td><%= cat.name %></td>
+    <td><%= cat.type %></td>
+    <td><%= cat.date_admitted %></td>
+    <td><a href="/animals/<%= cat.id %>">link</a></td>
+  </tr>
+  <% end %>
+  <% end %>
+</table>
+<br>
+<h3>Untrained Cats:</h3>
+<br>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Type</th>
+    <th>Date Admitted</th>
     <th>Healthy?</th>
-    <th>Trained?</th>
     <th>Adoptable?</th>
     <th>Link to Animal</th>
   </tr>
   <% @cats.each do |cat| %>
-  <% if cat.in_shelter? %>
+  <% if cat.trained == 'f' %>
   <tr>
     <td><%= cat.name %></td>
     <td><%= cat.type %></td>
     <td><%= cat.date_admitted %></td>
     <td><%= cat.healthy %></td>
-    <td><%= cat.trained %></td>
     <td><%= cat.adoptable? %></td>
     <td><a href="/animals/<%= cat.id %>">link</a></td>
   </tr>
@@ -25,5 +49,30 @@
   <% end %>
 </table>
 <br>
+
+<h3>Unwell Cats:</h3>
+
 <br>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Type</th>
+    <th>Date Admitted</th>
+    <th>Trained?</th>
+    <th>Adoptable?</th>
+    <th>Link to Animal</th>
+  </tr>
+  <% @cats.each do |cat| %>
+  <% if cat.healthy == 'f' %>
+  <tr>
+    <td><%= cat.name %></td>
+    <td><%= cat.type %></td>
+    <td><%= cat.date_admitted %></td>
+    <td><%= cat.trained %></td>
+    <td><%= cat.adoptable? %></td>
+    <td><a href="/animals/<%= cat.id %>">link</a></td>
+  </tr>
+  <% end %>
+  <% end %>
+</table>
 <p><a href="/animals/new">To create new animal click here:</a></p>
