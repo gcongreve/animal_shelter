@@ -192,6 +192,7 @@ class Animal
     in_shelter? && !adoptable?
   end
 
+  #for use in tables
   def display_type()
     if @species.downcase == "other"
       return @type
@@ -201,6 +202,11 @@ class Animal
     else
       return "#{@type} #{@species}"
     end
+  end
+
+  #for use in sentences in show view
+  def display_species()
+    @species == "Other" ? "pet" : @species
   end
 
   def customer_species()

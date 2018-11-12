@@ -109,10 +109,10 @@ class Customer
   end
 
   def display_preference()
-    if @species_preference.downcase == "other"
+    if @species_preference == "Other"
       return @type_preference
     elsif
-      @type_preference.downcase == "unknown"
+      @type_preference == "Unknown"
       return @species_preference
     else
       return "#{@type_preference} #{@species_preference}"

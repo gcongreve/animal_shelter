@@ -1,6 +1,14 @@
 
 <p><a href="/animals/new"">To create new animal click here</a></p>
 <br>
+<nav>
+  <ul>
+    <li><a href="/animals/type/dog">Dogs In Shelter</a></li>
+    <li><a href="/animals/type/cat">Cats In Shelter</a></li>
+    <li><a href="/animals/type/other">Other Animals In Shelter</a></li>
+  </ul>
+</nav>
+<br>
 <br>
 <table>
   <tr>
@@ -17,13 +25,14 @@
   </tr>
 </table>
 <br><br>
-<nav>
-  <ul>
-    <li><a href="/animals/type/dog">Dogs In Shelter</a></li>
-    <li><a href="/animals/type/cat">Cats In Shelter</a></li>
-    <li><a href="/animals/type/other">Other Animals In Shelter</a></li>
-  </ul>
-</nav>
+<table>
+  <tr>
+    <th><a href="/animals/">Every animal, including adopted ones</a></th>
+  </tr>
+  <tr>
+    <td> <%= Animal.all.count %></td>
+  </tr>
+</table>
 
 <h2>All the Animals currently in the shelter are:</h2>
 

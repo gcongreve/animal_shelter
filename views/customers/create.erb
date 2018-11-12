@@ -1,9 +1,19 @@
-<h2>A new customer has been created:</h2>
+<h2>The following customer has been created:</h2>
 
-<p>First Name: <%= @customer.first_name %></p>
-<p>Last Name: <%=@customer.last_name %></p>
-<p>Preference: <%=@customer.display_preference %></p>
-<p>Number of Adoptions: <%=@customer.number_of_adoptions %></p>
-<br>
-<a href="/customers/new">Create Another Customer</a>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Animal Preference</th>
+    <th>number of adoptions</th>
+  </tr>
+  <tr>
+    <td><a href="/customers/<%= @customer.id%>"><%= @customer.full_name %></a></td>
+    <td><%=@customer.display_preference %></td>
+    <td><%=@customer.number_of_adoptions %></td>
+  </tr>
+</table>
+<br><br>
+
+<a href="/customers/new">CLICK HERE TO ADD ANOTHER CUSTOMER</a>
+
 <a href="/customers/">Back to customers page</a>

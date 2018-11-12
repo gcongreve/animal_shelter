@@ -1,11 +1,21 @@
-<p>The following animal has now been logged into the Shelter:</p>
+<p>The following <%= @animal.display_species %> has now been logged into the Shelter:</p>
 
-<p><%= @animal.name %></p>
-<p><%= @animal.display_type %></p>
-<p><%= @animal.date_admitted %></p>
-<p>Healthy? :<%= @animal.healthy %></p>
-<p>Trained? :<%= @animal.trained %></p>
-<p>Adoptable? :<%= @animal.adoptable? %></p>
-<br>
-<br>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Type</th>
+    <th>Date Admitted</th>
+    <th>Healthy?</th>
+    <th>Trained?</th>
+  </tr>
+  <tr>
+    <td><%= @animal.name %></td>
+    <td><%= @animal.display_type %></td>
+    <td><%= @animal.date_admitted %></td>
+    <td><%= @animal.healthy %></td>
+    <td><%= @animal.trained %></td>
+  </tr>
+</table>
+<br><br>
+
 <a href="/animals/new">CLICK HERE TO ADD ANOTHER ANIMAL</a>

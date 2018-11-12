@@ -34,7 +34,7 @@
     <th>Link to Animal</th>
   </tr>
   <% @animals.each do |animal| %>
-  <% if animal.trained == 'f' %>
+  <% if animal.trained == 'false' %>
   <tr>
     <td><%= animal.name %></td>
     <td><%= animal.type %></td>
@@ -59,7 +59,7 @@
     <th>Link to Animal</th>
   </tr>
   <% @animals.each do |animal| %>
-  <% if animal.healthy == 'f' %>
+  <% if animal.healthy == 'false' %>
   <tr>
     <td><%= animal.name %></td>
     <td><%= animal.type %></td>

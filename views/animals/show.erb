@@ -1,4 +1,4 @@
-<p>The selected animal is:</p>
+<p>The selected <%= @animal.display_species %> is:</p>
 
 <table>
   <tr>
@@ -26,10 +26,10 @@
 </table>
 <br>
 
-<p>To edit this animal, click here:</p>
-<a href="/animals/<%= @animal.id %>/edit">Edit</a>
+<p><a href="/animals/<%= @animal.id %>/edit">Click here to edit <%=@animal.name %> the <%=@animal.display_type %>:</a></p>
 
-<p>To delete this animal, click here:</p>
+
+<p>To delete <%=@animal.name %> the <%=@animal.display_type %> click here:</p>
 <form action="/animals/<%= @animal.id %>/delete" method="post">
   <input type="submit" value="Delete">
 </form>
@@ -48,8 +48,8 @@
   <% end %>
 </table>
 <br>
-<p>Potential Customers who are interested in a <%= @animal.species == "Other" ? "pet" : @animal.species %>
-like <%=@animal.name %> are : </p>
+<p>These Customers may be interested in a <%= @animal.display_species %>
+like <%=@animal.name %>: </p>
 <table>
   <tr>
     <th>Name</th>
