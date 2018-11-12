@@ -203,10 +203,20 @@ class Animal
     end
   end
 
-  def customer_preference()
+  def customer_species()
     sql = "SELECT customers.* FROM customers
     WHERE customers.species_preference = $1 "
     values = [@species]
+    customers_hashs = SqlRunner.run(sql, values)
+    customers = customers_hashs.map { |customer| Customer.new(customer)}
+    return customers
+  end
+
+  def customer_type()
+    sql = "SELECT customers.* FROM customers
+    WHERE customers.species_preference = $1
+    AND customers.type_preference = $2"
+    values = [@species, @type]
     customers_hashs = SqlRunner.run(sql, values)
     customers = customers_hashs.map { |customer| Customer.new(customer)}
     return customers

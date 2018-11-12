@@ -21,13 +21,27 @@
   <input type="submit" value="Delete">
 </form>
 
-<p>Potential Customers who may be interested in <%=@animal.name %> are : </p>
+<p>These customers are looking for a cat exactly like <%=@animal.name %>: </p>
 <table>
   <tr>
     <th>Name</th>
     <th>link</th>
   </tr>
-  <% @animal.customer_preference.each do |customer| %>
+  <% @animal.customer_type.each do |customer| %>
+  <tr>
+    <td><%= customer.full_name %></td>
+    <td><a href="/customers/<%= customer.id %>">link</a></td>
+  </tr>
+  <% end %>
+</table>
+<br>
+<p>Potential Customers who are interested in cats like <%=@animal.name %> are : </p>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>link</th>
+  </tr>
+  <% @animal.customer_species.each do |customer| %>
   <tr>
     <td><%= customer.full_name %></td>
     <td><a href="/customers/<%= customer.id %>">link</a></td>
