@@ -31,11 +31,15 @@ animal_b = Animal.new({
   customer_a = Customer.new({
     "first_name" => "Dave",
     "last_name" => "Human",
+    "species_preference" => "Dog",
+    "type_preference" => "Unknown"
     })
 
   customer_b = Customer.new({
     "first_name" => "Steve",
     "last_name" => "Person",
+    "species_preference" => "Cat",
+    "type_preference" => "Unknown"
     })
 
   customer_a.save

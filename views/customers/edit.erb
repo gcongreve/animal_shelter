@@ -8,6 +8,18 @@
   <input id="last_name" type="text" name="last_name" value="<%= @customer.last_name %>">
   <br>
 
+  <label for="species_preference">Species Preference: </label><br>
+  <input type="radio" name="species_preference" value="Dog" <%= 'checked' if @customer.species_preference == "Dog" %>> Dog <br>
+
+  <input type="radio" name="species_preference" value="Cat" <%= 'checked' if @customer.species_preference == "Cat" %>> Cat<br>
+
+  <input type="radio" name="species_preference" value="Other" <%= 'checked' if @customer.species_preference == "Other" %>> Other<br>
+  <br>
+
+  <label for="type">Preferred species of animal/breed of cat/dog: </label>
+  <input id="type" type="text" name="type" value="<%= @customer.type_preference %>">
+
+
   <input type="submit" value="Update Customer">
 
 

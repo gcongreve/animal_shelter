@@ -185,11 +185,7 @@ class Animal
   end
 
   def adoptable?
-    if (@trained == 'true') && (@healthy == 'true') && (!adopted?)
-      return true
-    else
-      return false
-    end
+    (@trained == 'true') && (@healthy == 'true') && (!adopted?)
   end
 
 

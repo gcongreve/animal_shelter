@@ -9,6 +9,8 @@ class Customer
     @id = options['id'].to_i if options['id']
     @first_name = options['first_name']
     @last_name = options['last_name']
+    @species_preference = options['species_preference'] if options['species_preference']
+    @type_preference = options['type_preference'] if options['type_preference']
   end
 
   def self.all()
@@ -43,22 +45,26 @@ class Customer
     SET (
     first_name,
     last_name,
+    species_preference,
+    type_preference
        )
     =
-    ( $1, $2 )
-    WHERE id = $4"
-    values = [@first_name, @last_name, @id]
+    ( $1, $2, $3, $4 )
+    WHERE id = $5"
+    values = [@first_name, @last_name, @species_preference, @type_preference, @id]
     SqlRunner.run(sql, values)
   end
 
   def save()
     sql = "INSERT INTO customers
     ( first_name,
-      last_name )
+      last_name,
+      species_preference,
+      type_preference )
     VALUES
-    ( $1, $2 )
+    ( $1, $2, $3, $4)
     RETURNING id"
-    values = [@first_name, @last_name ]
+    values = [@first_name, @last_name, @species_preference, @type_preference ]
     results = SqlRunner.run(sql, values)
     @id = results.first()['id'].to_i
   end
@@ -91,6 +97,17 @@ class Customer
     animals_hashs = SqlRunner.run(sql, values)
     animals = animals_hashs.map { |animal| Animal.new(animal)}
     return animals
+  end
+
+  def display_preference()
+    if @species_preference.downcase == "other"
+      return @type_preference
+    elsif
+      @type_preference.downcase == "unknown"
+      return @species_preference
+    else
+      return "#{@type_preference} #{@species_preference}"
+    end
   end
 
 

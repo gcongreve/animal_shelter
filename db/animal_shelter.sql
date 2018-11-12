@@ -17,7 +17,9 @@ CREATE TABLE customers
 (
   id SERIAL4 primary key,
   first_name VARCHAR(255),
-  last_name VARCHAR(255)
+  last_name VARCHAR(255),
+  species_preference VARCHAR(255),
+  type_preference VARCHAR(255)
 );
 
 CREATE TABLE adoptions
