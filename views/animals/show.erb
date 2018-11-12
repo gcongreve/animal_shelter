@@ -34,7 +34,7 @@
   <input type="submit" value="Delete">
 </form>
 
-<p>These customers are looking for a cat exactly like <%=@animal.name %>: </p>
+<p>These customers are looking for a <%=@animal.display_type %> exactly like <%=@animal.name %>: </p>
 <table>
   <tr>
     <th>Name</th>
@@ -48,7 +48,8 @@
   <% end %>
 </table>
 <br>
-<p>Potential Customers who are interested in cats like <%=@animal.name %> are : </p>
+<p>Potential Customers who are interested in a <%= @animal.species == "Other" ? "pet" : @animal.species %>
+like <%=@animal.name %> are : </p>
 <table>
   <tr>
     <th>Name</th>

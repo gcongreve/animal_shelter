@@ -7,10 +7,10 @@ class Customer
 
   def initialize(options)
     @id = options['id'].to_i if options['id']
-    @first_name = options['first_name']
-    @last_name = options['last_name']
-    @species_preference = options['species_preference'] if options['species_preference']
-    @type_preference = options['type_preference'] if options['type_preference']
+    @first_name = options['first_name'].capitalize
+    @last_name = options['last_name'].capitalize
+    @species_preference = options['species_preference'].capitalize if options['species_preference']
+    @type_preference = options['type_preference'].capitalize if options['type_preference']
   end
 
   def self.all()

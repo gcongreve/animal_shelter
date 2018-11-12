@@ -7,9 +7,9 @@ class Animal
 
   def initialize(options)
     @id = options['id'].to_i if options['id']
-    @name = options['name']
-    @species = options['species']
-    @type = options['type']
+    @name = options['name'].capitalize
+    @species = options['species'].capitalize
+    @type = options['type'].capitalize
     @date_admitted = options['date_admitted']
     @healthy = options['healthy'] == 't' ? "true" : "false"
     @trained = options['trained'] == 't' ? "true" : "false"

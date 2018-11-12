@@ -5,8 +5,8 @@ DROP TABLE customers;
 CREATE TABLE animals
 (
   id SERIAL4 primary key,
-  name VARCHAR(255),
-  species VARCHAR(255),
+  name VARCHAR(255) NOT NULL,
+  species VARCHAR(255) NOT NULL,
   type VARCHAR(255),
   date_admitted VARCHAR(255),
   healthy BOOLEAN,
@@ -16,7 +16,7 @@ CREATE TABLE animals
 CREATE TABLE customers
 (
   id SERIAL4 primary key,
-  first_name VARCHAR(255),
+  first_name VARCHAR(255) NOT NULL,
   last_name VARCHAR(255),
   species_preference VARCHAR(255),
   type_preference VARCHAR(255)
