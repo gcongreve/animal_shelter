@@ -6,3 +6,15 @@ table, th, td {
     border: 1px solid black;
     text-align: center;
 }
+
+ul {
+  display: inline;
+}
+
+nav {
+  display: inline;
+  text-align: center;
+}
+nav li {
+  display: inline;
+}
