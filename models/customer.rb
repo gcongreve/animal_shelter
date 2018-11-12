@@ -2,7 +2,7 @@ require_relative ('../db/sql_runner')
 
 class Customer
 
-  attr_accessor :first_name, :last_name
+  attr_accessor :first_name, :last_name, :species_preference, :type_preference
   attr_reader :id
 
   def initialize(options)
@@ -94,6 +94,15 @@ class Customer
     ON animals.id = animal_id
     WHERE customer_id = $1"
     values = [@id]
+    animals_hashs = SqlRunner.run(sql, values)
+    animals = animals_hashs.map { |animal| Animal.new(animal)}
+    return animals
+  end
+
+  def general_preferences()
+    sql = "SELECT animals.* FROM animals
+    WHERE animals.species = $1 "
+    values = [@species_preference]
     animals_hashs = SqlRunner.run(sql, values)
     animals = animals_hashs.map { |animal| Animal.new(animal)}
     return animals

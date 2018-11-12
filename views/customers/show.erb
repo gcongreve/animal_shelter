@@ -13,12 +13,16 @@
 <p> Name: <%= animal.name %> the <%= animal.display_type %> </p>
 <% end %>
 
-
-
 <p>To edit the customer, click here:</p>
 <a href="/customers/<%= @customer.id %>/edit">Edit</a>
 
 <p>To delete this customer, click here:</p>
+
+<p>Currently Adoptable Animals who meet <%=@customer.full_name %>s preferences are : </p>
+<% @customer.general_preferences.each do |animal| %>
+<p> Name: <%= animal.name %> the <%= animal.display_type %> </p>
+<% end %>
+
 
 <form action="/customers/<%= @customer.id %>/delete" method="post">
   <input type="submit" value="Delete">
