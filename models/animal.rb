@@ -188,6 +188,12 @@ class Animal
     (@trained == 'true') && (@healthy == 'true') && (!adopted?)
   end
 
+  def not_yet_adoptable?
+    in_shelter? && !adoptable?
+  end
+
+
+
 
   def display_type()
     if @species.downcase == "other"

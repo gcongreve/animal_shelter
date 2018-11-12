@@ -17,13 +17,46 @@
 <a href="/customers/<%= @customer.id %>/edit">Edit</a>
 
 <p>To delete this customer, click here:</p>
-
-<p>Currently Adoptable Animals who meet <%=@customer.full_name %>s preferences are : </p>
-<% @customer.general_preferences.each do |animal| %>
-<p> Name: <%= animal.name %> the <%= animal.display_type %> </p>
-<% end %>
-
-
 <form action="/customers/<%= @customer.id %>/delete" method="post">
   <input type="submit" value="Delete">
 </form>
+
+<p>Currently Adoptable Animals who meet <%=@customer.full_name %>s preferences are : </p>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Type</th>
+    <th>link</th>
+  </tr>
+  <% @customer.general_preferences.each do |animal| %>
+  <% if animal.adoptable? %>
+  <tr>
+    <td><%= animal.name %></td>
+    <td><%= animal.display_type %></td>
+    <td><a href="/animals/<%= animal.id %>">link</a></td>
+  </tr>
+  <% end %>
+  <% end %>
+</table>
+
+<p>Animals in the shelter who meet <%=@customer.full_name %>s preferences and who should be adoptable soon are: </p>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Type</th>
+    <th>Trained</th>
+    <th>Healthy</th>
+    <th>link</th>
+  </tr>
+  <% @customer.general_preferences.each do |animal| %>
+  <% if animal.not_yet_adoptable? %>
+  <tr>
+    <td><%= animal.name %></td>
+    <td><%= animal.display_type %></td>
+    <td><%= animal.trained %></td>
+    <td><%= animal.healthy %></td>
+    <td><a href="/animals/<%= animal.id %>">link</a></td>
+  </tr>
+  <% end %>
+  <% end %>
+</table>
