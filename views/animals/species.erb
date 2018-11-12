@@ -1,7 +1,7 @@
 
-<h2>The x currently in the shelter are:</h2>
+<h2>The <%= @animals.first.species %>s currently in the shelter are:</h2>
 
-<h3>Adoptable : </h3>
+<h3>Adoptable <%= @animals.first.species %>s: </h3>
 
 <table>
   <tr>
@@ -22,7 +22,7 @@
   <% end %>
 </table>
 <br>
-<h3>Untrained x s : </h3>
+<h3>Untrained <%= @animals.first.species %>s : </h3>
 <br>
 <table>
   <tr>
@@ -47,7 +47,7 @@
   <% end %>
 </table>
 <br>
-<h3>Unwell x s : </h3>
+<h3>Unwell <%= @animals.first.species %>s : </h3>
 <br>
 <table>
   <tr>
