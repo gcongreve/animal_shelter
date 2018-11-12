@@ -11,8 +11,8 @@ class Animal
     @species = options['species']
     @type = options['type']
     @date_admitted = options['date_admitted']
-    @healthy = options['healthy']
-    @trained = options['trained']
+    @healthy = options['healthy'] == 't' ? "True" : "False"
+    @trained = options['trained'] == 't' ? "True" : "False"
   end
 
   def self.all()
