@@ -183,6 +183,7 @@ class Animal
     end
   end
 
+
   def display_type()
     if @species.downcase == "other"
       return @type
