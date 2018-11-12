@@ -11,8 +11,8 @@ class Animal
     @species = options['species']
     @type = options['type']
     @date_admitted = options['date_admitted']
-    @healthy = options['healthy'] == 't' ? "True" : "False"
-    @trained = options['trained'] == 't' ? "True" : "False"
+    @healthy = options['healthy'] == 't' ? "true" : "false"
+    @trained = options['trained'] == 't' ? "true" : "false"
   end
 
   def self.all()
@@ -185,7 +185,7 @@ class Animal
   end
 
   def adoptable?
-    if (@trained == 't') && (@healthy == 't') && (!adopted?)
+    if (@trained == 'true') && (@healthy == 'true') && (!adopted?)
       return true
     else
       return false
