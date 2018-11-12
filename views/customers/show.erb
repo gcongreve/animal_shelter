@@ -21,7 +21,7 @@
   <input type="submit" value="Delete">
 </form>
 
-<p>Any Currently Adoptable Animals who meet <%=@customer.full_name %>s preferences are : </p>
+<p>Currently Adoptable <%= @customer.display_species %>s who <%=@customer.full_name %> may be interested in : </p>
 <table>
   <tr>
     <th>Name</th>
@@ -39,7 +39,7 @@
   <% end %>
 </table>
 
-<p>Any Animals in the shelter who meet <%=@customer.full_name %>s preferences and who should be adoptable soon are: </p>
+<p>Other <%= @customer.display_species %>s in the shelter who <%=@customer.full_name %> might be interested in when they're available: </p>
 <table>
   <tr>
     <th>Name</th>

@@ -119,5 +119,9 @@ class Customer
     end
   end
 
+  def display_species()
+    @species_preference == 'Other' ? "pet" : @species_preference
+  end
+
 
 end
