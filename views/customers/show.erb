@@ -1,25 +1,32 @@
 <p>The selected Customer is: </p>
 
-<p>First Name: <%=@customer.first_name %></p>
-<p>Last Name: <%=@customer.last_name %></p>
-<p>Species Preference : <%= @customer.species_preference %></p>
-<p>Type Preference : <%= @customer.type_preference %></p>
-<p>Number of Adoptions: <%=@customer.number_of_adoptions %></p>
 
-<p><strong>Previous Adoptions:</strong></p>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Animal Preference</th>
+    <th>Number of Adoptions</th>
+  </tr>
+  <tr>
+    <td><%= @customer.full_name %></td>
+    <td><%= @customer.display_preference %></td>
+    <td><%= @customer.number_of_adoptions %></td>
+  </tr>
+</table>
 
+<p><strong>Customers Previous Adoptions:</strong></p>
 
 <% @customer.animals.each do |animal| %>
 <p> Name: <%= animal.name %> the <%= animal.display_type %> </p>
 <% end %>
 
-<p>To edit the customer, click here:</p>
-<a href="/customers/<%= @customer.id %>/edit">Edit</a>
+<p><a href="/customers/<%= @customer.id %>/edit">To edit the customer click here</a></p>
 
 <p>To delete this customer, click here:</p>
 <form action="/customers/<%= @customer.id %>/delete" method="post">
   <input type="submit" value="Delete">
 </form>
+
 
 <p>Currently Adoptable <%= @customer.display_species %>s who <%=@customer.full_name %> may be interested in : </p>
 <table>
@@ -39,7 +46,7 @@
   <% end %>
 </table>
 
-<p>Other <%= @customer.display_species %>s in the shelter who <%=@customer.full_name %> might be interested in when they're available: </p>
+<p>Other <%= @customer.display_species %>s in the shelter who <%=@customer.full_name %> might be interested in when available: </p>
 <table>
   <tr>
     <th>Name</th>
