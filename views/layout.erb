@@ -5,20 +5,40 @@
   <title>Animal Shelter</title>
   <link rel="stylesheet" href="/style.css">
 </head>
+
 <body>
-  <nav>
-    <ul>
-      <li><a href="/animals/home">Animals</a></li>
-      <li><a href="/customers/">Customers</a></li>
-      <li><a href="/adoptions/">Adoptions</a></li>
-      </ul>
-    </nav>
+
+  <div class="header">
 
 
-    <p>This is the animal shelter site. This text is coming from the layout.erb in views</p>
+    <header>
+      <div class="logo">
+      <img src="/images/761801.png" alt="Logo">
+      </div>
+      <nav>
+        <ul>
+          <li><a href="/animals/home">Animals</a></li>
+          <li><a href="/customers/">Customers</a></li>
+          <li><a href="/adoptions/">Adoptions</a></li>
+        </ul>
+      </nav>
+    </header>
+  </div>
+  <div class="flex-container">
+    <div style="flex-grow: 1">1</div>
+
+    <div style="flex-grow: 2">2
+
 
     <%= yield %>
+    </div>
 
-    <p>This is the animal shelter site. This text is coming from the layout.erb in views</p>
-  </body>
-  </html>
+    <div style="flex-grow: 1">3</div>
+  </div>
+  <div class="footer">
+    <footer>
+      <p>It's Not Their Falult is a made up company but if it were real it would probably be a registered charity in England and Wales with a number like(090877) and in Scotland with  a number like (SC0933). It's not a  Registered company. And doesn't have a Registered address like 123 Fake Street, Fakeshire FR18 4FR.</p>
+    </footer>
+  </div>
+</body>
+</html>

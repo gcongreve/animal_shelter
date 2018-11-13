@@ -1,3 +1,22 @@
+/*
+.content {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+} */
+
+
+.header {
+  background-color: lightblue;
+}
+
+.logo img {
+  height: 10%;
+  width: auto;
+  margin: 0 auto;
+}
+
+
 table {
     border-collapse: collapse;
 }
@@ -7,14 +26,34 @@ table, th, td {
     text-align: center;
 }
 
-ul {
-  display: inline;
-}
 
 nav {
   display: inline;
-  text-align: center;
+  text-align: right;
+  padding-left: 15px;
 }
+
 nav li {
   display: inline;
+  color: white;
+  font-size: 16;
+}
+
+footer {
+  color: lightgrey;
+  bottom: 0;
+  width: 100%;
+  position: sticky;
+}
+
+footer p {
+  color: #9E9E9E;
+  font-size: 6;
+}
+
+.flex-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+
 }
