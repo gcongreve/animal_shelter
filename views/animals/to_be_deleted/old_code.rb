@@ -51,3 +51,47 @@
 <br>
 <br>
 <br>
+
+
+
+FORM FOR ENTERING ANIMAL:
+
+
+
+<form action="/animals/" method="post">
+
+  <label for="name">Name: </label>
+  <input id="name" type="text" name="name">
+  <br>
+
+  <label for="species">Species: </label><br>
+  <input type="radio" name="species" value="Dog" checked> Dog<br>
+  <input type="radio" name="species" value="Cat"> Cat<br>
+  <input type="radio" name="species" value="Other"> Other<br>
+  <br>
+  <label for="type">Breed of Dog/Cat or species of animal: </label>
+  <input id="type" type="text" name="type" value="Unknown">
+
+  <br>
+  <label for="date_admitted">Date Admitted: </label>
+  <input id="date_admitted" type="date" name="date_admitted">
+
+  <br>
+  <label for="healthy">Animal is HEALTHY?</label>
+  <select class="healthy" name="healthy">
+    <option value="t">True</option>
+    <option value="f">False</option>
+  </select>
+
+  <br>
+  <label for="Trained">Animal is TRAINED?: </label>
+  <select class="trained" name="trained">
+    <option value="t">True</option>
+    <option value="f">False</option>
+  </select>
+  <br>
+
+  <input type="submit" value="Log Animal into Shelter">
+
+</form>
+<br><br><br>

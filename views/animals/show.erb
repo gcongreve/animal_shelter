@@ -20,45 +20,45 @@
     <td><%= @animal.adoptable? %></td>
     <td><%= @animal.adopted? %></td>
     <td><% if @animal.adopted? %> <a href="/customers/<%= @animal.customer.id %>">
-    <%= @animal.customer.full_name %></a>
-    <% end %></td>
-  </tr>
-</table>
-<br>
+      <%= @animal.customer.full_name %></a>
+      <% end %></td>
+    </tr>
+  </table>
+  <br>
 
-<a href="/animals/<%= @animal.id %>/edit" class="button_edit">Click here to edit <%=@animal.name %> the <%=@animal.display_type %>:</a>
+  <a href="/animals/<%= @animal.id %>/edit" class="button_edit">Click here to edit <%=@animal.name %> the <%=@animal.display_type %>:</a>
 
-<p>These customers are looking for a <%=@animal.display_type %> exactly like <%=@animal.name %>: </p>
-<table>
-  <tr>
-    <th>Name</th>
-    <th>link</th>
-  </tr>
-  <% @animal.customer_type.each do |customer| %>
-  <tr>
-    <td><%= customer.full_name %></td>
-    <td><a href="/customers/<%= customer.id %>">link</a></td>
-  </tr>
-  <% end %>
-</table>
-<br>
-<p>These Customers may be interested in a <%= @animal.display_species %>
-like <%=@animal.name %>: </p>
-<table>
-  <tr>
-    <th>Name</th>
-    <th>link</th>
-  </tr>
-  <% @animal.customer_species.each do |customer| %>
-  <tr>
-    <td><%= customer.full_name %></td>
-    <td><a href="/customers/<%= customer.id %>">link</a></td>
-  </tr>
-  <% end %>
-</table>
-<br><br>
-<p>To delete <%=@animal.name %> the <%=@animal.display_type %> click here:</p>
-<form action="/animals/<%= @animal.id %>/delete" method="post">
-  <input type="submit" class="button_delete" value="delete <%=@animal.name %> the <%=@animal.display_type %>">
-</form>
-<br><br><br><br>
+  <p>These customers are looking for a <%=@animal.display_type %> exactly like <%=@animal.name %>: </p>
+  <table>
+    <tr>
+      <th>Name</th>
+      <th>link</th>
+    </tr>
+    <% @animal.customer_type.each do |customer| %>
+    <tr>
+      <td><%= customer.full_name %></td>
+      <td><a href="/customers/<%= customer.id %>">link</a></td>
+    </tr>
+    <% end %>
+  </table>
+  <br>
+  <p>These Customers may be interested in a <%= @animal.display_species %>
+    like <%=@animal.name %>: </p>
+    <table>
+      <tr>
+        <th>Name</th>
+        <th>link</th>
+      </tr>
+      <% @animal.customer_species.each do |customer| %>
+      <tr>
+        <td><%= customer.full_name %></td>
+        <td><a href="/customers/<%= customer.id %>">link</a></td>
+      </tr>
+      <% end %>
+    </table>
+    <br><br>
+    <p>To delete <%=@animal.name %> the <%=@animal.display_type %> click here:</p>
+    <form action="/animals/<%= @animal.id %>/delete" method="post">
+      <input type="submit" class="button_delete" value="delete <%=@animal.name %> the <%=@animal.display_type %>">
+    </form>
+    <br><br><br><br>

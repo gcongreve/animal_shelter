@@ -6,13 +6,16 @@
   <input id="name" type="text" name="name">
   <br>
 
-  <label for="species">Species: </label><br>
-  <input type="radio" name="species" value="Dog" checked> Dog<br>
-  <input type="radio" name="species" value="Cat"> Cat<br>
-  <input type="radio" name="species" value="Other"> Other<br>
-  <br>
-  <label for="type">Breed of Dog/Cat or species of animal: </label>
-  <input id="type" type="text" name="type" value="Unknown">
+
+<label for="species">Species</label>
+<select class="species" name="species">
+  <option value="Dog">Dog:: Breed:</option>
+  <option value="Cat">Cat:: Breed:</option>
+  <option value="Other">Other:: Species:</option>
+</select>
+<input id="type" type="text" name="type" value="Unknown">
+<table>
+
 
   <br>
   <label for="date_admitted">Date Admitted: </label>
@@ -33,7 +36,7 @@
   </select>
   <br>
 
-  <input type="submit" value="Log Animal into Shelter">
+  <input type="submit" value="Log Animal into Shelter" class='button_create'>
 
 </form>
 <br><br><br>
