@@ -15,13 +15,14 @@
 </table>
 
 <p><a href="/customers/<%= @customer.id %>/edit" class="button_edit">Edit <%= @customer.full_name%> here</a></p>
+<div class="previous_adoptions">
 
-<p><strong><%=@customer.full_name %>'s  Previous Adoptions:</strong></p>
-
-<% @customer.animals.each do |animal| %>
-<p><a href="/animals/<%= animal.id %>"> <%= animal.name %> the <%= animal.display_type %> </a></p>
-<% end %>
-
+  <p><strong><%=@customer.full_name %>'s  Previous Adoptions:</strong></p>
+  <%= @customer.number_of_adoptions == 0 ? "None" : '' %>
+  <% @customer.animals.each do |animal| %>
+  <p><a href="/animals/<%= animal.id %>"> <%= animal.name %> the <%= animal.display_type %> </a></p>
+  <% end %>
+</div>
 
 
 

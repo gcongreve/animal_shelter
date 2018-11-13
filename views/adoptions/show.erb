@@ -4,3 +4,9 @@
  <%= @adoption.animal.display_type %></a>
  was adopted by <a href="/customers/<%=@adoption.customer_id%>"> <%= @adoption.customer.full_name %> </a></p>
 <br>
+<br>
+<br>
+<br>
+<p>To delete  this adoption click here:</p>
+<form action="/adoptions/<%= @adoption.id %>/delete" method="post">
+  <input type="submit" class="button_delete" value="delete adoption">

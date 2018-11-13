@@ -16,10 +16,6 @@ end
 #posts adoptions detatils from /new to database
 post '/adoptions/?' do
   @adoption = Adoption.new(params)
-  # animal = @adoption.animal
-  # customer = @adoption.customer
-  # animal.be_adopted
-  # customer.adopt_pet
   @adoption.save
   erb(:'adoptions/create')
 end
@@ -36,4 +32,11 @@ end
 get '/adoptions/:id/?' do
   @adoption = Adoption.find_by_id(params[:id])
   erb(:'adoptions/show')
+end
+
+# destroy
+post '/adoptions/:id/delete/?' do
+  @adoption = Adoption.find_by_id(params[:id])
+  @adoption.delete
+  redirect to "/adoptions"
 end

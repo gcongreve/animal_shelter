@@ -10,15 +10,15 @@ get '/animals/type/:species/?' do
   erb( :'animals/species')
 end
 
-# get '/animals/untrained/?' do
-#   @animals = Animal.untrained
-#   erb ( :'animals/sta')
-# end
-
 get '/animals/home/?' do
   @animals = Animal.all
   erb ( :'animals/home')
 end
+
+# get '/animals/untrained/?' do
+#   @animals = Animal.untrained
+#   erb ( :'animals/sta')
+# end
 
 # get '/animals/adoptable/?' do
 #   @animals = Animal.adoptable
@@ -62,7 +62,6 @@ post '/animals/?' do
   @animal.save
   erb(:'animals/create')
 end
-
 
 # edit
 get '/animals/:id/edit/?' do

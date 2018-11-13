@@ -1,8 +1,23 @@
-<p>Your animal has now been updated!</p>
+<h3> <%= @animal.name %> has now been updated! </h3>
 
-<p><%= @animal.name %></p>
-<p><%= @animal.display_type %></p>
-<p><%= @animal.date_admitted %></p>
-<p>Healthy? : <%= @animal.healthy %></p>
-<p>Trained? : <%= @animal.trained %></p>
-<p>Adoptable? : <%= @animal.adoptable? %></p>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Type</th>
+    <th>Date Admitted</th>
+    <th>Healthy?</th>
+    <th>Trained?</th>
+  </tr>
+  <tr>
+    <td><%= @animal.name %></td>
+    <td><%= @animal.display_type %></td>
+    <td><%= @animal.date_admitted %></td>
+    <td><%= @animal.healthy %></td>
+    <td><%= @animal.trained %></td>
+    <td> <%= @animal.adoptable? %></td>
+  </tr>
+</table>
+
+<br><br>
+
+<p><a href="/animals/" class="button_animals_link"> Back to the Animals</a></p>

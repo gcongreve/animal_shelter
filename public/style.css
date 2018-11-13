@@ -23,7 +23,7 @@ a:hover {
 }
 
 .header img {
-    height: 100px;
+    height: 110px;
     width: auto;
     margin: 0 auto;
     float: left;
@@ -56,4 +56,8 @@ nav {
 .flex-container {
   margin: 0 17%;
   text-align: center;
+}
+
+.previous_adoptions {
+  border: 1px solid black;
 }
