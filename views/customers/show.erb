@@ -14,13 +14,13 @@
   </tr>
 </table>
 
-<p><strong>Customers Previous Adoptions:</strong></p>
+<p><a href="/customers/<%= @customer.id %>/edit" class="button_edit">Edit <%= @customer.full_name%> here</a></p>
+
+<p><strong><%=@customer.full_name %>'s  Previous Adoptions:</strong></p>
 
 <% @customer.animals.each do |animal| %>
-<p> Name: <%= animal.name %> the <%= animal.display_type %> </p>
+<p><a href="/animals/<%= animal.id %>"> <%= animal.name %> the <%= animal.display_type %> </a></p>
 <% end %>
-
-<p><a href="/customers/<%= @customer.id %>/edit" class="button_edit">Edit <%= @customer.full_name%> here</a></p>
 
 <p>To delete this customer, click here:</p>
 <form action="/customers/<%= @customer.id %>/delete" method="post">
@@ -33,14 +33,12 @@
   <tr>
     <th>Name</th>
     <th>Type</th>
-    <th>link</th>
   </tr>
   <% @customer.general_preferences.each do |animal| %>
   <% if animal.adoptable? %>
   <tr>
-    <td><%= animal.name %></td>
+    <td><a href="/animals/<%= animal.id %>"><%= animal.name %></a></td>
     <td><%= animal.display_type %></td>
-    <td><a href="/animals/<%= animal.id %>">link</a></td>
   </tr>
   <% end %>
   <% end %>
@@ -53,17 +51,16 @@
     <th>Type</th>
     <th>Trained</th>
     <th>Healthy</th>
-    <th>link</th>
   </tr>
   <% @customer.general_preferences.each do |animal| %>
   <% if animal.not_yet_adoptable? %>
   <tr>
-    <td><%= animal.name %></td>
+    <td><a href="/animals/<%= animal.id %>"><%= animal.name %></a></td>
     <td><%= animal.display_type %></td>
     <td><%= animal.trained %></td>
     <td><%= animal.healthy %></td>
-    <td><a href="/animals/<%= animal.id %>">link</a></td>
   </tr>
   <% end %>
   <% end %>
 </table>
+<br><br><br><br><br>

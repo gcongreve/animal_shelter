@@ -19,8 +19,8 @@
     <td><%= @animal.trained %></td>
     <td><%= @animal.adoptable? %></td>
     <td><%= @animal.adopted? %></td>
-    <td><% if @animal.adopted? %>
-    <%= @animal.customer.full_name %>
+    <td><% if @animal.adopted? %> <a href="/customers/<%= @animal.customer.id %>">
+    <%= @animal.customer.full_name %></a>
     <% end %></td>
   </tr>
 </table>
@@ -62,3 +62,4 @@ like <%=@animal.name %>: </p>
   </tr>
   <% end %>
 </table>
+<br><br><br><br>
