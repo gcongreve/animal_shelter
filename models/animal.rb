@@ -51,6 +51,8 @@ class Animal
       return self.untrained
     elsif status == 'unhealthy'
       return self.unhealthy
+    elsif status == "adoptable"
+      return self.adoptable
     end
   end
 
