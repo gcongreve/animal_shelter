@@ -6,6 +6,10 @@
 } */
 body {
   width: 100%;
+  font-family: Helvetica;
+  font-size: 21px;
+  background-color: antiquewhite;
+  justify-content: center;
 }
 
 .header {
@@ -24,10 +28,13 @@ nav ul li{
   display: inline;
   text-align: right;
   padding-left: 15px;
+  color: white;
+  font-family: monospace;
+  font-size: 40px;
 }
 
 nav {
-  width: 300px;
+  width: 790px;
   margin: 0 auto;
 }
 
@@ -44,6 +51,5 @@ footer p {
 }
 
 .flex-container {
-  margin: 0 20%;
-
+  margin: 0 17%;
 }
