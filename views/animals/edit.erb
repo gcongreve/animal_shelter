@@ -22,15 +22,15 @@
   <br>
   <label for="healthy">Healthy</label>
   <select class="healthy" name="healthy">
-    <option value="t" <%= 'selected' if @animal.healthy == "t" %>>True</option>
-    <option value="f" <%= 'selected' if @animal.healthy == "f" %>>False</option>
+    <option value="true" <%= 'selected' if @animal.healthy == "true" %>>True</option>
+    <option value="false" <%= 'selected' if @animal.healthy == "false" %>>False</option>
   </select>
 
   <br>
   <label for="trained">Trained</label>
   <select class="trained" name="trained">
-    <option value="t" <%= 'selected' if @animal.trained == "t" %>>True</option>
-    <option value="f" <%= 'selected' if @animal.trained == "f" %>>False</option>
+    <option value="true" <%= 'selected' if @animal.trained == "true" %>>True</option>
+    <option value="false" <%= 'selected' if @animal.trained == "false" %>>False</option>
   </select>
   <br>
 
