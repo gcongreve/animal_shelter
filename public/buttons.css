@@ -1,11 +1,9 @@
 .button_animals_link {
-  font: bold 20px Arial;
-  text-decoration: none;
+  font: bold 23px Arial;
   background-color: #EEEEEE;
   color: #333333;
-  color: #333333;
-  padding: 2px 6px 2px 6px;
-  border: 1px solid grey;
+  padding: 3px 7px;
+  border: 2px solid grey;
 }
 
 .button_create {

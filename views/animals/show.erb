@@ -28,7 +28,7 @@
 
   <a href="/animals/<%= @animal.id %>/edit" class="button_edit">Click here to edit <%=@animal.name %> the <%=@animal.display_type %>:</a>
 
-  <p>These customers are looking for a <%=@animal.display_type %> exactly like <%=@animal.name %>: </p>
+  <p>Any customers looking for a <%=@animal.display_type %> exactly like <%=@animal.name %>: </p>
   <table>
     <tr>
       <th>Name</th>
@@ -57,5 +57,5 @@
     <form action="/animals/<%= @animal.id %>/delete" method="post">
       <input type="submit" class="button_delete" value="delete <%=@animal.name %> the <%=@animal.display_type %>">
     </form>
-    <p><a href="/animals/" class="button_animals_link"> Back to the Animals</a></p>
+    <p><a href="/animals/home" class="button_animals_link"> Back to the Animals</a></p>
     <br><br><br><br>
