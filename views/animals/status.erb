@@ -1,4 +1,4 @@
-<p> The STATUS Animals Are: </p>
+<p> The <%= @status_text %></p>  Are: 
 
 <table>
   <tr>
@@ -6,6 +6,8 @@
     <th>Type</th>
     <th>Date Admitted</th>
     <th>Healthy?</th>
+    <th>Trained?</th>
+    <th>Adoptable?</th>
     <th>Link to Animal</th>
   </tr>
   <% @animals.each do |animal| %>
@@ -14,6 +16,8 @@
     <td><%= animal.display_type %></td>
     <td><%= animal.date_admitted %></td>
     <td><%= animal.healthy %></td>
+    <td><%= animal.trained %></td>
+    <td><%= animal.adoptable? %></td>
     <td><a href="/animals/<%= animal.id %>">link</a></td>
   </tr>
   <% end %>

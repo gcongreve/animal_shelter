@@ -1,6 +1,7 @@
 
 get '/animals/status/:status/?' do
   @animals = Animal.by_status(params['status'])
+  @status_text = Animal.route_to_status(params['status'])
   erb( :'animals/status')
 end
 
@@ -11,7 +12,7 @@ end
 
 get '/animals/untrained/?' do
   @animals = Animal.untrained
-  erb ( :'animals/untrained')
+  erb ( :'animals/sta')
 end
 
 get '/animals/home/?' do

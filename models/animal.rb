@@ -221,6 +221,10 @@ class Animal
     @species == "Other" ? "pet" : @species
   end
 
+  def display_status()
+
+  end
+
   def customer_species()
     sql = "SELECT customers.* FROM customers
     WHERE customers.species_preference = $1 "
@@ -238,6 +242,16 @@ class Animal
     customers_hashs = SqlRunner.run(sql, values)
     customers = customers_hashs.map { |customer| Customer.new(customer)}
     return customers
+  end
+
+  def self.route_to_status(route)
+    route_to_status = {
+      "in_shelter" => "Animals in the shelter",
+      "untrained" => "Untrained Animals",
+      "adoptable" => "Adoptable Animals",
+      "unhealthy" => "Unwell Animals"
+    }
+    return route_to_status[route]
   end
 
 

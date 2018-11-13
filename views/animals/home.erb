@@ -1,13 +1,29 @@
 
 <p><a href="/animals/new"">To create new animal click here</a></p>
 <br>
-<nav>
-  <ul>
-    <li><a href="/animals/type/dog">Dogs In Shelter</a></li>
-    <li><a href="/animals/type/cat">Cats In Shelter</a></li>
-    <li><a href="/animals/type/other">Other Animals In Shelter</a></li>
-  </ul>
-</nav>
+
+
+
+
+
+<p><a href="/animals/type/dog">Click here to see the <%= Animal.dogs.count %> Dogs in the Shelter</a></p>
+
+<p><a href="/animals/type/cat">Click here to see the <%= Animal.cats.count %> Cats in the Shelter</a></p>
+
+<p><a href="/animals/type/other">Click here to see the <%= Animal.others.count %> Other Animals in the Shelter</a></p>
+
+<p><a href="/animals/status/adoptable">Click here to see the <%= Animal.adoptable_number %> Adoptable Animals in the Shelter</a></p>
+
+<p><a href="/animals/status/untrained">Click here to see the <%= Animal.untrained.count %> Untrained Animals in the Shelter</a></p>
+
+<p><a href="/animals/status/unhealthy">Click here to see the <%= Animal.unhealthy.count %> Unwell Animals in the Shelter</a></p>
+
+<p><a href="/animals/status/in_shelter">Click here to see All the <%= Animal.in_shelter.count %> Animals currently in the Shelter</a></p>
+
+<p><a href="/animals/">Click here to see all of the <%= Animal.all.count %>  animals who have ever been admitted to the Shelter</a></p>
+
+
+
 <br>
 <br>
 <table>
@@ -33,34 +49,3 @@
     <td> <%= Animal.all.count %></td>
   </tr>
 </table>
-
-<h2>All the Animals currently in the shelter are:</h2>
-
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Type</th>
-    <th>Date Admitted</th>
-    <th>Healthy?</th>
-    <th>Trained?</th>
-    <th>Adoptable?</th>
-    <th>Link to Animal</th>
-  </tr>
-  <% @animals.each do |animal| %>
-  <% if animal.in_shelter? %>
-  <tr>
-    <td><%= animal.name %></td>
-    <td><%= animal.display_type %></td>
-    <td><%= animal.date_admitted %></td>
-    <td><%= animal.healthy %></td>
-    <td><%= animal.trained %></td>
-    <td><%= animal.adoptable? %></td>
-    <td><a href="/animals/<%= animal.id %>">link</a></td>
-  </tr>
-  <% end %>
-  <% end %>
-</table>
-<br>
-<br>
-<br>
-<p><a href="/animals/">To see every animal who entered the shelter click here</a></p>
