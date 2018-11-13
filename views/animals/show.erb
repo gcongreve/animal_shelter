@@ -26,12 +26,12 @@
 </table>
 <br>
 
-<p><a href="/animals/<%= @animal.id %>/edit">Click here to edit <%=@animal.name %> the <%=@animal.display_type %>:</a></p>
+<a href="/animals/<%= @animal.id %>/edit" class="button_edit">Click here to edit <%=@animal.name %> the <%=@animal.display_type %>:</a>
 
 
 <p>To delete <%=@animal.name %> the <%=@animal.display_type %> click here:</p>
 <form action="/animals/<%= @animal.id %>/delete" method="post">
-  <input type="submit" value="Delete">
+  <input type="submit" class="button_delete" value="delete <%=@animal.name %> the <%=@animal.display_type %>">
 </form>
 
 <p>These customers are looking for a <%=@animal.display_type %> exactly like <%=@animal.name %>: </p>

@@ -20,7 +20,7 @@
 <p> Name: <%= animal.name %> the <%= animal.display_type %> </p>
 <% end %>
 
-<p><a href="/customers/<%= @customer.id %>/edit">To edit the customer click here</a></p>
+<p><a href="/customers/<%= @customer.id %>/edit" style="button_edit">To edit the customer click here</a></p>
 
 <p>To delete this customer, click here:</p>
 <form action="/customers/<%= @customer.id %>/delete" method="post">

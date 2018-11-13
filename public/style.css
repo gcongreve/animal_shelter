@@ -37,17 +37,15 @@ nav {
   width: 790px;
   margin: 0 auto;
 }
-
-footer {
-  color: lightgrey;
-  bottom: 0;
-  width: 100%;
-  position: sticky;
-}
-
-footer p {
-  color: #9E9E9E;
-  font-size: 6;
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: lightblue;
+    color: grey;
+    font-size: 10px;
+    text-align: center;
 }
 
 .flex-container {
