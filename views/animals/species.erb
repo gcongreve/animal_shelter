@@ -81,3 +81,19 @@
   </ul>
 </nav>
 <p><a href="/animals/new">To create new animal click here:</a></p>
+<br>
+<br>
+<table>
+  <tr>
+    <th><a href="/animals/status/in_shelter">Animals Currently in Shelter</a></th>
+    <th><a href="/animals/type/dog"> Dogs in Shelter</a></th>
+    <th><a href="/animals/type/cat"> Cats in Shelter</a></th>
+    <th><a href="/animals/type/other"> Other Animals</a></th>
+  </tr>
+  <tr>
+    <td> <%= Animal.in_shelter.count %></td>
+    <td> <%= Animal.dogs.count %> </td>
+    <td> <%= Animal.cats.count %> </td>
+    <td> <%= Animal.others.count %> </td>
+  </tr>
+</table>
