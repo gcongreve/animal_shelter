@@ -4,15 +4,13 @@
   <input id="name" type="text" name="name" value="<%= @animal.name%>">
   <br>
 
-  <label for="species">Species: </label><br>
-  <input type="radio" name="species" value="Dog" <%= 'checked' if @animal.species == "Dog" %>> Dog <br>
 
-  <input type="radio" name="species" value="Cat" <%= 'checked' if @animal.species == "Cat" %>> Cat<br>
-
-  <input type="radio" name="species" value="Other" <%= 'checked' if @animal.species == "Other" %>> Other<br>
-  <br>
-
-  <label for="type">Species of animal/breed of cat/dog: </label>
+  <label for="species">Species</label>
+  <select class="species" name="species">
+    <option value="Dog"<%= 'selected' if @animal.species == "Dog" %>>Dog:: Breed:</option>
+    <option value="Cat" <%= 'selected' if @animal.species == "Cat" %>>Cat:: Breed:</option>
+    <option value="Other" <%= 'selected' if @animal.species == "Other" %>>Other:: Species:</option>
+  </select>
   <input id="type" type="text" name="type" value="<%= @animal.type %>">
 
   <br>
@@ -20,21 +18,21 @@
   <input id="date_admitted" type="text" name="date_admitted" value="<%= @animal.date_admitted %>">
 
   <br>
-  <label for="healthy">Healthy</label>
+  <label for="healthy">Now Healthy?</label>
   <select class="healthy" name="healthy">
     <option value="t" <%= 'selected' if @animal.healthy == "true" %>>True</option>
     <option value="f" <%= 'selected' if @animal.healthy == "false" %>>False</option>
   </select>
 
   <br>
-  <label for="trained">Trained</label>
+  <label for="trained">Now Trained?</label>
   <select class="trained" name="trained">
     <option value="t" <%= 'selected' if @animal.trained == "true" %>>True</option>
     <option value="f" <%= 'selected' if @animal.trained == "false" %>>False</option>
   </select>
   <br>
 
-  <input type="submit" value="Update Animal">
+  <input type="submit" value="Update Animal" class="button_create">
 
 </form>
 <br><br>

@@ -95,3 +95,10 @@ FORM FOR ENTERING ANIMAL:
 
 </form>
 <br><br><br>
+<label for="species">Species: </label><br>
+<input type="radio" name="species" value="Dog" <%= 'checked' if @animal.species == "Dog" %>> Dog <br>
+
+<input type="radio" name="species" value="Cat" <%= 'checked' if @animal.species == "Cat" %>> Cat<br>
+
+<input type="radio" name="species" value="Other" <%= 'checked' if @animal.species == "Other" %>> Other<br>
+<br>

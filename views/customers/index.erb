@@ -1,22 +1,18 @@
-<h1>Customers /index</h1>
+<h1>Customers </h1>
 <br>
 <p><a href="/customers/new" class="button_create">Create a new customer</a></p>
 <br>
 <table>
   <tr>
-    <th>First Name</th>
-    <th>Last Name</th>
+    <th>Full Name</th>
     <th>Preferences</th>
     <th>Number of Adoptions</th>
-    <th>Link to customer</th>
   </tr>
   <% @customers.each do |customer| %>
   <tr>
-    <td><%= customer.first_name %></td>
-    <td><%= customer.last_name %></td>
+    <td><a href="/customers/<%=customer.id%>"><%= customer.full_name %></a></td>
     <td><%= customer.display_preference %></td>
     <td><%= customer.number_of_adoptions %></td>
-    <td><a href="/customers/<%= customer.id %>">link</a></td>
   </tr>
   <% end %>
 </table>

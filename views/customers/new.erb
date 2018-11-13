@@ -7,13 +7,12 @@
 <label for="last_name">Last Name</label>
 <input id="last-name" type="text" name="last_name">
 <br>
-
-<label for="species_preference">Species Preference: </label><br>
-<input type="radio" name="species_preference" value="Dog" checked> Dog<br>
-<input type="radio" name="species_preference" value="Cat"> Cat<br>
-<input type="radio" name="species_preference" value="Other"> Other<br>
-<br>
-<label for="type_preference">Prefered breed of Dog/Cat or species of animal: </label>
+<label for="species_preference">Preference:</label>
+<select class="species_preference" name="species_preference">
+  <option value="Dog">Dog:: Breed:</option>
+  <option value="Cat">Cat:: Breed:</option>
+  <option value="Other">Other:: Species:</option>
+</select>
 <input id="type_preference" type="text" name="type_preference" value="Unknown">
 
 <br>
