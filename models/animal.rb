@@ -117,6 +117,36 @@ class Animal
     return cats
   end
 
+  def self.cats_shelter
+    shelter = []
+    cats.each do |cat|
+      if cat.in_shelter?
+        shelter << cat
+      end
+    end
+    return shelter
+  end
+
+  def self.dogs_shelter
+    shelter = []
+    dogs.each do |dog|
+      if dog.in_shelter?
+        shelter << dog
+      end
+    end
+    return shelter
+  end
+
+  def self.others_shelter
+    shelter = []
+    others.each do |other|
+      if other.in_shelter?
+        shelter << other
+      end
+    end
+    return shelter
+  end
+
   def self.others
     sql = "SELECT animals.* FROM animals
     WHERE species = 'Other' "
