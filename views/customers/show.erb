@@ -22,10 +22,7 @@
 <p><a href="/animals/<%= animal.id %>"> <%= animal.name %> the <%= animal.display_type %> </a></p>
 <% end %>
 
-<p>To delete this customer, click here:</p>
-<form action="/customers/<%= @customer.id %>/delete" method="post">
-  <input type="submit" value="Delete" class="button_delete">
-</form>
+
 
 
 <p>Currently Adoptable <%= @customer.display_species %>s who <%=@customer.full_name %> may be interested in : </p>
@@ -63,4 +60,10 @@
   <% end %>
   <% end %>
 </table>
+<br>
+<p>To delete this customer, click here:</p>
+<form action="/customers/<%= @customer.id %>/delete" method="post">
+  <input type="submit" value="Delete" class="button_delete">
+</form>
+
 <br><br><br><br><br>

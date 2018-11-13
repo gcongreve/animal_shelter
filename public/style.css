@@ -12,6 +12,10 @@ body {
   justify-content: center;
 }
 
+a:hover {
+  color: red;
+}
+
 .header {
   background-color: lightblue;
   height: 150px;
