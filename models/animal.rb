@@ -46,6 +46,14 @@ class Animal
     SqlRunner.run(sql)
   end
 
+  def self.by_status(status)
+    if status == 'untrained'
+      return self.untrained
+    elsif status == 'unhealthy'
+      return self.unhealthy
+    end
+  end
+
   def self.untrained
     sql = "SELECT animals.* FROM animals
     WHERE trained = false;"

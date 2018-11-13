@@ -1,8 +1,8 @@
 
-# get '/animals/unadoptable/:species/?' do
-#   @animals = Animal.by_species(params['species'].capitalize)
-#   erb( :'animals/species')
-# end
+get '/animals/status/:status/?' do
+  @animals = Animal.by_status(params['status'])
+  erb( :'animals/status')
+end
 
 get '/animals/type/:species/?' do
   @animals = Animal.by_species(params['species'].capitalize)

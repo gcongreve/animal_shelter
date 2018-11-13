@@ -1,0 +1,22 @@
+<p> The STATUS Animals Are: </p>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Type</th>
+    <th>Date Admitted</th>
+    <th>Healthy?</th>
+    <th>Link to Animal</th>
+  </tr>
+  <% @animals.each do |animal| %>
+  <tr>
+    <td><%= animal.name %></td>
+    <td><%= animal.display_type %></td>
+    <td><%= animal.date_admitted %></td>
+    <td><%= animal.healthy %></td>
+    <td><a href="/animals/<%= animal.id %>">link</a></td>
+  </tr>
+  <% end %>
+</table>
+
+<p>You can change an animals status by clicking on it's link and editing it</p>
