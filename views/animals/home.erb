@@ -2,10 +2,6 @@
 <p><a href="/animals/new"">To create new animal click here</a></p>
 <br>
 
-
-
-
-
 <p><a href="/animals/type/dog">Click here to see the <%= Animal.dogs.count %> Dogs in the Shelter</a></p>
 
 <p><a href="/animals/type/cat">Click here to see the <%= Animal.cats.count %> Cats in the Shelter</a></p>
@@ -21,31 +17,3 @@
 <p><a href="/animals/status/in_shelter">Click here to see All the <%= Animal.in_shelter.count %> Animals currently in the Shelter</a></p>
 
 <p><a href="/animals/">Click here to see all of the <%= Animal.all.count %>  animals who have ever been admitted to the Shelter</a></p>
-
-
-
-<br>
-<br>
-<table>
-  <tr>
-    <th>Animals Currently in Shelter</th>
-    <th><a href="/animals/adoptable">Adoptable Animals</a></th>
-    <th><a href="/animals/untrained">Untrained Animals </a></th>
-    <th><a href="/animals/unwell">Unwell Animals</a></th>
-  </tr>
-  <tr>
-    <td> <%= Animal.in_shelter.count %></td>
-    <td> <%= Animal.adoptable_number %></td>
-    <td> <%= Animal.untrained.count %></td>
-    <td> <%= Animal.unhealthy.count %></td>
-  </tr>
-</table>
-<br><br>
-<table>
-  <tr>
-    <th><a href="/animals/">Every animal, including adopted ones</a></th>
-  </tr>
-  <tr>
-    <td> <%= Animal.all.count %></td>
-  </tr>
-</table>

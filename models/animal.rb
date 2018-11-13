@@ -187,7 +187,6 @@ class Animal
     return customer.first
   end
 
-
   def adopted?
     !adoption.empty?
   end

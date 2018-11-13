@@ -1,4 +1,4 @@
-<p> The <%= @status_text %></p>  Are: 
+<p> The <%= @status_text %>  Are: </p>
 
 <table>
   <tr>
@@ -24,3 +24,28 @@
 </table>
 
 <p>You can change an animals status by clicking on it's link and editing it</p>
+
+<br>
+<br>
+<table>
+  <tr>
+    <th><a href="/animals/status/in_shelter">Animals Currently in Shelter</a></th>
+    <th><a href="/animals/status/apoptable">Adoptable Animals</a></th>
+    <th><a href="/animals/status/untrained">Untrained Animals </a></th>
+    <th><a href="/animals/status/unhealthy">Unwell Animals</a></th>
+    <th><a href="/animals/type/dog"> Dogs in Shelter</a></th>
+    <th><a href="/animals/type/cat"> Cats in Shelter</a></th>
+    <th><a href="/animals/type/other"> Other Animals</a></th>
+    <th><a href="/animals/">Every animal, ever</a></th>
+  </tr>
+  <tr>
+    <td> <%= Animal.in_shelter.count %></td>
+    <td> <%= Animal.adoptable_number %></td>
+    <td> <%= Animal.untrained.count %></td>
+    <td> <%= Animal.unhealthy.count %></td>
+    <td> <%= Animal.dogs.count %> </td>
+    <td> <%= Animal.cats.count %> </td>
+    <td> <%= Animal.others.count %> </td>
+    <td> <%= Animal.all.count %> </td>
+  </tr>
+</table>
