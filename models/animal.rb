@@ -53,6 +53,8 @@ class Animal
       return self.unhealthy
     elsif status == "adoptable"
       return self.adoptable
+    elsif status == "in_shelter"
+      return self.in_shelter
     end
   end
 
