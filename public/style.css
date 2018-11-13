@@ -4,39 +4,31 @@
   align-items: center;
   flex-direction: column;
 } */
-
+body {
+  width: 100%;
+}
 
 .header {
   background-color: lightblue;
+  height: 150px;
 }
 
-.logo img {
-  height: 10%;
-  width: auto;
-  margin: 0 auto;
+.header img {
+    height: 100px;
+    width: auto;
+    margin: 0 auto;
+    float: left;
 }
 
-
-table {
-    border-collapse: collapse;
-}
-
-table, th, td {
-    border: 1px solid black;
-    text-align: center;
-}
-
-
-nav {
+nav ul li{
   display: inline;
   text-align: right;
   padding-left: 15px;
 }
 
-nav li {
-  display: inline;
-  color: white;
-  font-size: 16;
+nav {
+  width: 300px;
+  margin: 0 auto;
 }
 
 footer {
@@ -52,8 +44,6 @@ footer p {
 }
 
 .flex-container {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
+  margin: 0 20%;
 
 }
