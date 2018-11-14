@@ -7,9 +7,10 @@
     <th>Date Admitted</th>
     <th>Healthy?</th>
     <th>Trained?</th>
+    <th>Adoptable?</th>
   </tr>
   <tr>
-    <td><%= @animal.name %></td>
+    <td><a href="/animals/<%=@animal.id%>"><%= @animal.name %></a></td>
     <td><%= @animal.display_type %></td>
     <td><%= @animal.date_admitted %></td>
     <td><%= @animal.healthy %></td>

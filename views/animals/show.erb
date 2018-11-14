@@ -53,9 +53,10 @@
       <% end %>
     </table>
     <br><br>
+    <p><a href="/animals/home" class="button_animals_link"> Back to the Animals</a></p>
+    <br>
     <p>To delete <%=@animal.name %> the <%=@animal.display_type %> click here:</p>
     <form action="/animals/<%= @animal.id %>/delete" method="post">
       <input type="submit" class="button_delete" value="delete <%=@animal.name %> the <%=@animal.display_type %>">
     </form>
-    <p><a href="/animals/home" class="button_animals_link"> Back to the Animals</a></p>
     <br><br><br><br>
