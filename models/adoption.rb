@@ -12,18 +12,6 @@ class Adoption
     @customer_id = options['customer_id']
   end
 
-  def save()
-    sql = "INSERT INTO adoptions
-    ( animal_id,
-      customer_id )
-    VALUES
-    ( $1, $2 )
-    RETURNING id"
-    values = [@animal_id, @customer_id]
-    results = SqlRunner.run(sql, values)
-    @id = results.first()['id'].to_i
-  end
-
   def self.all()
     sql = "SELECT * FROM adoptions"
     adoptions_hashs = SqlRunner.run(sql)
@@ -42,6 +30,18 @@ class Adoption
   def self.delete_all
     sql = "DELETE FROM adoptions"
     SqlRunner.run(sql)
+  end
+
+  def save()
+    sql = "INSERT INTO adoptions
+    ( animal_id,
+      customer_id )
+    VALUES
+    ( $1, $2 )
+    RETURNING id"
+    values = [@animal_id, @customer_id]
+    results = SqlRunner.run(sql, values)
+    @id = results.first()['id'].to_i
   end
 
   def delete
@@ -90,7 +90,5 @@ class Adoption
     customer = Customer.new(result.first)
     return customer
   end
-
-
 
 end

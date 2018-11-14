@@ -46,17 +46,28 @@ class Animal
     SqlRunner.run(sql)
   end
 
+  # def self.by_status(status)
+  #   if status == 'untrained'
+  #     return self.untrained
+  #   elsif status == 'unhealthy'
+  #     return self.unhealthy
+  #   elsif status == "adoptable"
+  #     return self.adoptable
+  #   elsif status == "in_shelter"
+  #     return self.in_shelter
+  #   end
+  # end
+
   def self.by_status(status)
-    if status == 'untrained'
-      return self.untrained
-    elsif status == 'unhealthy'
-      return self.unhealthy
-    elsif status == "adoptable"
-      return self.adoptable
-    elsif status == "in_shelter"
-      return self.in_shelter
-    end
+    statuses = {
+      'untrained' => self.untrained,
+      'unhealthy' => self.unhealthy,
+      'adoptable' => self.adoptable,
+      'in_shelter' => self.in_shelter
+    }
+    return statuses[status]
   end
+
 
   def self.untrained
     sql = "SELECT animals.* FROM animals
@@ -155,6 +166,16 @@ class Animal
     return others
   end
 
+  def self.route_to_status(route)
+    route_to_status = {
+      "in_shelter" => "Animals in the shelter",
+      "untrained" => "Untrained Animals",
+      "adoptable" => "Adoptable Animals",
+      "unhealthy" => "Unwell Animals"
+    }
+    return route_to_status[route]
+  end
+
   def delete
     sql = "DELETE FROM animals
     WHERE id = $1"
@@ -250,10 +271,8 @@ class Animal
     @species == "Other" ? "pet" : @species
   end
 
-  def display_status()
 
-  end
-
+  #returns all the customers who are interested in animals of the same species
   def customer_species()
     sql = "SELECT customers.* FROM customers
     WHERE customers.species_preference = $1 "
@@ -263,6 +282,7 @@ class Animal
     return customers
   end
 
+  #returns all the cusotmers who are interested in animals of the same type
   def customer_type()
     sql = "SELECT customers.* FROM customers
     WHERE customers.species_preference = $1
@@ -272,17 +292,5 @@ class Animal
     customers = customers_hashs.map { |customer| Customer.new(customer)}
     return customers
   end
-
-  def self.route_to_status(route)
-    route_to_status = {
-      "in_shelter" => "Animals in the shelter",
-      "untrained" => "Untrained Animals",
-      "adoptable" => "Adoptable Animals",
-      "unhealthy" => "Unwell Animals"
-    }
-    return route_to_status[route]
-  end
-
-
 
 end
