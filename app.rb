@@ -7,9 +7,9 @@ require_relative('./models/adoption.rb')
 also_reload('./models/*')
 
 
-require_relative('./controllers/animal_controller')
-require_relative('./controllers/customer_controller')
-require_relative('./controllers/adoption_controller')
+require_relative('./controllers/animals_controller')
+require_relative('./controllers/customers_controller')
+require_relative('./controllers/adoptions_controller')
 
 
 get '/' do
