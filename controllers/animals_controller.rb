@@ -15,35 +15,6 @@ get '/animals/home/?' do
   erb ( :'animals/home')
 end
 
-# get '/animals/untrained/?' do
-#   @animals = Animal.untrained
-#   erb ( :'animals/sta')
-# end
-
-# get '/animals/adoptable/?' do
-#   @animals = Animal.adoptable
-#   erb ( :'animals/adoptable')
-# end
-
-# get '/animals/dogs/?' do
-#   @dogs = Animal.dogs
-#   erb ( :'animals/dogs')
-# end
-
-# get '/animals/cats/?' do
-#   @cats = Animal.cats
-#   erb ( :'animals/cats')
-# end
-#
-# get '/animals/others/?' do
-#   @others = Animal.others
-#   erb ( :'animals/others')
-# end
-#
-# get '/animals/unwell/?' do
-#   @animals = Animal.unhealthy
-#   erb ( :'animals/unwell')
-# end
 
 #index
 get '/animals/?' do

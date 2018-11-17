@@ -13,8 +13,8 @@
   <% @adoptions.each do |adoption| %>
   <tr>
     <td><%= adoption.id%></td>
-    <td> <%= adoption.animal_name %> : <%= adoption.animal.display_type %></td>
-    <td> <%= adoption.customer.full_name %></td>
+    <td> <a href="/animals/<%= adoption.animal.id %>"> <%= adoption.animal_name %> : <%= adoption.animal.display_type %></td></a>
+    <td> <a href="/customers/<%= adoption.customer.id %>"> <%= adoption.customer.full_name %> </a></td>
     <td><a href="/adoptions/<%= adoption.id %>">link</a></td>
   </tr>
   <% end %>

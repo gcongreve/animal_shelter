@@ -46,18 +46,6 @@ class Animal
     SqlRunner.run(sql)
   end
 
-  # def self.by_status(status)
-  #   if status == 'untrained'
-  #     return self.untrained
-  #   elsif status == 'unhealthy'
-  #     return self.unhealthy
-  #   elsif status == "adoptable"
-  #     return self.adoptable
-  #   elsif status == "in_shelter"
-  #     return self.in_shelter
-  #   end
-  # end
-
   def self.by_status(status)
     statuses = {
       'untrained' => self.untrained,
@@ -91,6 +79,14 @@ class Animal
     return number
   end
 
+  def self.others
+    sql = "SELECT animals.* FROM animals
+    WHERE species = 'Other' "
+    others_hash = SqlRunner.run(sql)
+    others = others_hash.map { |other| Animal.new(other) }
+    return others
+  end
+
 
   def self.dogs
     sql = "SELECT animals.* FROM animals
@@ -98,6 +94,14 @@ class Animal
     dogs_hash = SqlRunner.run(sql)
     dogs = dogs_hash.map { |dog| Animal.new(dog) }
     return dogs
+  end
+
+  def self.cats
+    sql = "SELECT animals.* FROM animals
+    WHERE species = 'Cat' "
+    cats_hash = SqlRunner.run(sql)
+    cats = cats_hash.map { |cat| Animal.new(cat) }
+    return cats
   end
 
 
@@ -118,14 +122,6 @@ class Animal
       end
     end
     return shelter
-  end
-
-  def self.cats
-    sql = "SELECT animals.* FROM animals
-    WHERE species = 'Cat' "
-    cats_hash = SqlRunner.run(sql)
-    cats = cats_hash.map { |cat| Animal.new(cat) }
-    return cats
   end
 
   def self.cats_shelter
@@ -156,14 +152,6 @@ class Animal
       end
     end
     return shelter
-  end
-
-  def self.others
-    sql = "SELECT animals.* FROM animals
-    WHERE species = 'Other' "
-    others_hash = SqlRunner.run(sql)
-    others = others_hash.map { |other| Animal.new(other) }
-    return others
   end
 
   def self.route_to_status(route)
