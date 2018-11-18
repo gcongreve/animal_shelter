@@ -108,6 +108,7 @@ class Customer
     return animals
   end
 
+  #to diplay preference on customer show view
   def display_preference()
     if @species_preference == "Other"
       return @type_preference

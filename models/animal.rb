@@ -259,7 +259,6 @@ class Animal
     @species == "Other" ? "pet" : @species
   end
 
-
   #returns all the customers who are interested in animals of the same species
   def customer_species()
     sql = "SELECT customers.* FROM customers
